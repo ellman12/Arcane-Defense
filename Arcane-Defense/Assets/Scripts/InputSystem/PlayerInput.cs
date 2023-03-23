@@ -94,6 +94,134 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Spells"",
+            ""id"": ""adbde275-3324-477c-bf80-b90d381bcd5d"",
+            ""actions"": [
+                {
+                    ""name"": ""Slot1"",
+                    ""type"": ""Button"",
+                    ""id"": ""fef95831-ff45-4683-b77c-8dba8871ce98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot2"",
+                    ""type"": ""Button"",
+                    ""id"": ""71f9e0c1-f660-4428-a857-8e8c003aa534"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7a3399e-b665-4aa6-a38d-c10d7c95ea63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot4"",
+                    ""type"": ""Button"",
+                    ""id"": ""cfb394f7-602b-4a09-9c5b-ab258a9c160a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot5"",
+                    ""type"": ""Button"",
+                    ""id"": ""05562281-6237-4ce6-b028-37f23d9ec729"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot6"",
+                    ""type"": ""Button"",
+                    ""id"": ""d489cd7a-1522-481f-8fee-7637cbc37734"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""80708d9a-6203-4f30-9252-5d8d4752e8e2"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ae2bcd7-25fe-4bec-af63-2122b634bd26"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd19334c-cd26-48ba-ad16-e60d751cc904"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f2be68e-0152-4e14-be93-b32c3f73ea9e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19bb9c8f-a5ef-44d1-ac89-aa0d98a67708"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52c4bd25-3c29-41d0-80c3-75643773dcec"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -101,6 +229,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Movement
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Movement = m_Movement.FindAction("Movement", throwIfNotFound: true);
+        // Spells
+        m_Spells = asset.FindActionMap("Spells", throwIfNotFound: true);
+        m_Spells_Slot1 = m_Spells.FindAction("Slot1", throwIfNotFound: true);
+        m_Spells_Slot2 = m_Spells.FindAction("Slot2", throwIfNotFound: true);
+        m_Spells_Slot3 = m_Spells.FindAction("Slot3", throwIfNotFound: true);
+        m_Spells_Slot4 = m_Spells.FindAction("Slot4", throwIfNotFound: true);
+        m_Spells_Slot5 = m_Spells.FindAction("Slot5", throwIfNotFound: true);
+        m_Spells_Slot6 = m_Spells.FindAction("Slot6", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,8 +340,103 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
+
+    // Spells
+    private readonly InputActionMap m_Spells;
+    private List<ISpellsActions> m_SpellsActionsCallbackInterfaces = new List<ISpellsActions>();
+    private readonly InputAction m_Spells_Slot1;
+    private readonly InputAction m_Spells_Slot2;
+    private readonly InputAction m_Spells_Slot3;
+    private readonly InputAction m_Spells_Slot4;
+    private readonly InputAction m_Spells_Slot5;
+    private readonly InputAction m_Spells_Slot6;
+    public struct SpellsActions
+    {
+        private @PlayerInput m_Wrapper;
+        public SpellsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Slot1 => m_Wrapper.m_Spells_Slot1;
+        public InputAction @Slot2 => m_Wrapper.m_Spells_Slot2;
+        public InputAction @Slot3 => m_Wrapper.m_Spells_Slot3;
+        public InputAction @Slot4 => m_Wrapper.m_Spells_Slot4;
+        public InputAction @Slot5 => m_Wrapper.m_Spells_Slot5;
+        public InputAction @Slot6 => m_Wrapper.m_Spells_Slot6;
+        public InputActionMap Get() { return m_Wrapper.m_Spells; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SpellsActions set) { return set.Get(); }
+        public void AddCallbacks(ISpellsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SpellsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SpellsActionsCallbackInterfaces.Add(instance);
+            @Slot1.started += instance.OnSlot1;
+            @Slot1.performed += instance.OnSlot1;
+            @Slot1.canceled += instance.OnSlot1;
+            @Slot2.started += instance.OnSlot2;
+            @Slot2.performed += instance.OnSlot2;
+            @Slot2.canceled += instance.OnSlot2;
+            @Slot3.started += instance.OnSlot3;
+            @Slot3.performed += instance.OnSlot3;
+            @Slot3.canceled += instance.OnSlot3;
+            @Slot4.started += instance.OnSlot4;
+            @Slot4.performed += instance.OnSlot4;
+            @Slot4.canceled += instance.OnSlot4;
+            @Slot5.started += instance.OnSlot5;
+            @Slot5.performed += instance.OnSlot5;
+            @Slot5.canceled += instance.OnSlot5;
+            @Slot6.started += instance.OnSlot6;
+            @Slot6.performed += instance.OnSlot6;
+            @Slot6.canceled += instance.OnSlot6;
+        }
+
+        private void UnregisterCallbacks(ISpellsActions instance)
+        {
+            @Slot1.started -= instance.OnSlot1;
+            @Slot1.performed -= instance.OnSlot1;
+            @Slot1.canceled -= instance.OnSlot1;
+            @Slot2.started -= instance.OnSlot2;
+            @Slot2.performed -= instance.OnSlot2;
+            @Slot2.canceled -= instance.OnSlot2;
+            @Slot3.started -= instance.OnSlot3;
+            @Slot3.performed -= instance.OnSlot3;
+            @Slot3.canceled -= instance.OnSlot3;
+            @Slot4.started -= instance.OnSlot4;
+            @Slot4.performed -= instance.OnSlot4;
+            @Slot4.canceled -= instance.OnSlot4;
+            @Slot5.started -= instance.OnSlot5;
+            @Slot5.performed -= instance.OnSlot5;
+            @Slot5.canceled -= instance.OnSlot5;
+            @Slot6.started -= instance.OnSlot6;
+            @Slot6.performed -= instance.OnSlot6;
+            @Slot6.canceled -= instance.OnSlot6;
+        }
+
+        public void RemoveCallbacks(ISpellsActions instance)
+        {
+            if (m_Wrapper.m_SpellsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISpellsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SpellsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SpellsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SpellsActions @Spells => new SpellsActions(this);
     public interface IMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
+    }
+    public interface ISpellsActions
+    {
+        void OnSlot1(InputAction.CallbackContext context);
+        void OnSlot2(InputAction.CallbackContext context);
+        void OnSlot3(InputAction.CallbackContext context);
+        void OnSlot4(InputAction.CallbackContext context);
+        void OnSlot5(InputAction.CallbackContext context);
+        void OnSlot6(InputAction.CallbackContext context);
     }
 }
