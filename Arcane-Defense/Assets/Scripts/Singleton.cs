@@ -8,11 +8,13 @@ public abstract class Singleton<T> : MonoBehaviour where T : Object
 	{
 		if (I == null)
 		{
+			Debug.Log($"{gameObject.name} with type {typeof(T)} says I is null");
 			I = FindObjectOfType<T>();
 			DontDestroyOnLoad(gameObject);
 		}
 		else
 		{
+			Debug.Log($"{gameObject.name} with type {typeof(T)} says I is not null");
 			Debug.LogWarning($"{gameObject.name} destroyed.", this);
 			Destroy(gameObject);
 		}
