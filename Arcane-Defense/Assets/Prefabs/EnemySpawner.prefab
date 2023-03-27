@@ -91,4 +91,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRepeatRate: 2
-  idk: {fileID: 0}
+  enemies:
+  - {fileID: 6806572275725424439, guid: e7e02d5393034624798d4864b98d630d, type: 3}

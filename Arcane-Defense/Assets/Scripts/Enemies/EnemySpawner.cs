@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 namespace Enemies
@@ -6,6 +8,7 @@ namespace Enemies
 	public class EnemySpawner : MonoBehaviour
 	{
 		[SerializeField] private float spawnRepeatRate;
+		[SerializeField] private List<Enemy> enemies;
 		
 		private new BoxCollider2D collider;
 		private Vector2 bottomLeft, topLeft, topRight, bottomRight;
@@ -23,7 +26,9 @@ namespace Enemies
 
 		private void EnemySpawning()
 		{
-			GetNewEnemyStartPos();
+			int index = Random.Range(0, enemies.Count);
+			var newEnemy = PrefabUtility.InstantiatePrefab(enemies[index]) as Enemy;
+			newEnemy!.transform.position = GetNewEnemyStartPos();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
