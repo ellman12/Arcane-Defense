@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemies
 {
-	public class SwordEnemy : MonoBehaviour
+	public class SwordEnemy : Enemy
 	{
 		[SerializeField] private float moveSpeed, stoppingDistance;
 
