@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using CBC = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 namespace InputSystem
 {
 	public class PlayerMovement : Singleton<PlayerMovement>
 	{
-		[SerializeField] private float moveSpeed;
+		[NonSerialized] public Vector3 movementInput;
 		
-		private Vector2 movementInput;
+		[SerializeField] private float moveSpeed;
 
 		private void Start()
 		{
