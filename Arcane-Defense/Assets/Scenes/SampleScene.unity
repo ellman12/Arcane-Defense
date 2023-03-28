@@ -215,7 +215,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &975496011
+--- !u!1001 &1330394188
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -223,10 +223,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 463319770057873520, guid: e23fc418125788a4cb543de73e154b51, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1457479429677009620, guid: e23fc418125788a4cb543de73e154b51, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -237,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3233849526629293832, guid: e23fc418125788a4cb543de73e154b51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 3233849526629293832, guid: e23fc418125788a4cb543de73e154b51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 3233849526629293832, guid: e23fc418125788a4cb543de73e154b51, type: 3}
       propertyPath: m_LocalPosition.z

@@ -94,6 +94,7 @@ MonoBehaviour:
   spawnRepeatRate: 2
   enemies:
   - {fileID: 6806572275725424439, guid: e7e02d5393034624798d4864b98d630d, type: 3}
+  - {fileID: -65230058467177638, guid: 3328880d159b3ba4185fc91c66fb9c37, type: 3}
 --- !u!114 &2446260777941452000
 MonoBehaviour:
   m_ObjectHideFlags: 0
