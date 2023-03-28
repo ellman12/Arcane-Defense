@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Spells
 {
-	public class LinearTravelSpell : MonoBehaviour
+	public class LinearTravelSpell : Spell
 	{
 		[SerializeField] private float speed;
 		private Vector3 worldPOS, direction;
