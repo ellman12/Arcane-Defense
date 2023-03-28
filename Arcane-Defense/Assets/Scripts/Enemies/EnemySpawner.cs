@@ -11,14 +11,13 @@ namespace Enemies
 		[SerializeField] private List<Enemy> enemies;
 		
 		private new BoxCollider2D collider;
-		private Vector2 bottomLeft, topLeft, topRight, bottomRight;
+		private Vector2 bottomLeft, topLeft, bottomRight;
 
 		private void Start()
 		{
 			collider = GetComponent<BoxCollider2D>();
 			bottomLeft = new Vector2(collider.bounds.min.x, collider.bounds.min.y);
 			topLeft = new Vector2(collider.bounds.min.x, collider.bounds.max.y);
-			topRight = new Vector2(collider.bounds.max.x, collider.bounds.max.y);
 			bottomRight = new Vector2(collider.bounds.max.x, collider.bounds.min.y);
 			
 			InvokeRepeating(nameof(EnemySpawning), 0, spawnRepeatRate);
