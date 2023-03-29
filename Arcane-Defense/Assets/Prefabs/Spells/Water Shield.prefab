@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpell: 0
+  duration: 10
 --- !u!1 &5719012116473979818
 GameObject:
   m_ObjectHideFlags: 0
