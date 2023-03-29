@@ -14,6 +14,8 @@ namespace Spells
 			mousePos.y -= spellPos.y;
 			float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 			transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+			
+			Destroy(gameObject, 20);
 		}
 
 		private void Update()
