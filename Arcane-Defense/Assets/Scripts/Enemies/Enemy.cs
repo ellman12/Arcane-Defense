@@ -4,6 +4,14 @@ namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
+		[SerializeField]
+		private int contactDamage;
+		public int ContactDamage
+		{
+			get => contactDamage;
+			private set => contactDamage = value;
+		}
+		
 		private float health;
 
 		public float Health
