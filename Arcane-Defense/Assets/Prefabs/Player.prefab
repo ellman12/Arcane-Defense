@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d0cc6f634f4cf89238f9024618571f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementInput: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!114 &2095717888894043400
 MonoBehaviour:
@@ -223,3 +222,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
+  - {fileID: 7569034187995724530, guid: 70d484e94ab393f44af4c44626cc56f9, type: 3}
