@@ -72,6 +72,134 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Spells",
+            "id": "adbde275-3324-477c-bf80-b90d381bcd5d",
+            "actions": [
+                {
+                    "name": "Slot1",
+                    "type": "Button",
+                    "id": "fef95831-ff45-4683-b77c-8dba8871ce98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot2",
+                    "type": "Button",
+                    "id": "71f9e0c1-f660-4428-a857-8e8c003aa534",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot3",
+                    "type": "Button",
+                    "id": "b7a3399e-b665-4aa6-a38d-c10d7c95ea63",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot4",
+                    "type": "Button",
+                    "id": "cfb394f7-602b-4a09-9c5b-ab258a9c160a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot5",
+                    "type": "Button",
+                    "id": "05562281-6237-4ce6-b028-37f23d9ec729",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot6",
+                    "type": "Button",
+                    "id": "d489cd7a-1522-481f-8fee-7637cbc37734",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "80708d9a-6203-4f30-9252-5d8d4752e8e2",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ae2bcd7-25fe-4bec-af63-2122b634bd26",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd19334c-cd26-48ba-ad16-e60d751cc904",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f2be68e-0152-4e14-be93-b32c3f73ea9e",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19bb9c8f-a5ef-44d1-ac89-aa0d98a67708",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52c4bd25-3c29-41d0-80c3-75643773dcec",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
