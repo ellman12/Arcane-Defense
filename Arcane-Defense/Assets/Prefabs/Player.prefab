@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5494656115842115933}
   - component: {fileID: 7856025300415667314}
   - component: {fileID: 2095717888894043400}
+  - component: {fileID: 3848199136964207680}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -224,3 +225,20 @@ MonoBehaviour:
   slots:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
   - {fileID: 7569034187995724530, guid: 70d484e94ab393f44af4c44626cc56f9, type: 3}
+--- !u!114 &3848199136964207680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139849220129260930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4949646b3c9f4aa2bf4830f17788167e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibilityDuration: 1
+  invincibilityDeltaTime: 0.1
+  health: 0
+  maxHealth: 0
+  invincible: 0

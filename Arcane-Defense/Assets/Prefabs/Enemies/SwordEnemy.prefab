@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db0d1990fbc942b083c8c575afe199e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contactDamage: 0
+  contactDamage: 10
   moveSpeed: 0.4
   stoppingDistance: 0.15
