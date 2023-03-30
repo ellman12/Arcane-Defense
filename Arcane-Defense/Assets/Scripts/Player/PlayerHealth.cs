@@ -8,6 +8,7 @@ namespace Player
 	public class PlayerHealth : Singleton<PlayerHealth>
 	{
 		[SerializeField] private float invincibilityDuration, invincibilityDeltaTime;
+		[SerializeField] private StatBar healthBar;
 		
 		[SerializeField, ReadOnly] private int health, maxHealth;
 		[SerializeField, ReadOnly] private bool invincible;
@@ -18,6 +19,7 @@ namespace Player
 			set
 			{
 				health = value;
+				healthBar.SetValue(health);
 				if (health <= 0)
 					Destroy(gameObject);
 			}
@@ -29,12 +31,13 @@ namespace Player
 			set
 			{
 				maxHealth = value;
+				healthBar.SetMaxValue(maxHealth);
 			}
 		}
 
 		private void Start()
 		{
-			Health = 100;
+			MaxHealth = Health = 100;
 		}
 
 		private void OnTriggerStay2D(Collider2D col)
