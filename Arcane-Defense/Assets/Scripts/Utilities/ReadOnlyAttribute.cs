@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-#if UNITY_EDITOR
 namespace Utilities
 {
+	#if UNITY_EDITOR
 	[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 	internal class ReadOnlyDrawer : PropertyDrawer
 	{
@@ -19,10 +19,10 @@ namespace Utilities
 			GUI.enabled = true;
 		}
 	}
+	#endif
 
 	///Displays a value in the Inspector that can't be modified.
 	public class ReadOnlyAttribute : PropertyAttribute
 	{
 	}
 }
-#endif
