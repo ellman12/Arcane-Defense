@@ -6,8 +6,6 @@ namespace InputSystem
 {
 	public class PlayerMovement : Singleton<PlayerMovement>
 	{
-		[NonSerialized] public Vector3 lastDirection;
-
 		[SerializeField] private float moveSpeed;
 		
 		private Vector3 movementInput;
@@ -17,17 +15,12 @@ namespace InputSystem
 			InputManager.I.PlayerInput.Movement.Movement.performed += OnMove;
 			InputManager.I.PlayerInput.Movement.Movement.canceled += OnMove;
 
-			void OnMove(CBC context)
-			{
-				movementInput = context.ReadValue<Vector2>();
-				if (movementInput == Vector3.zero) return;
-					lastDirection = movementInput;
-			}
+			void OnMove(CBC context) => movementInput = context.ReadValue<Vector2>();
 		}
 
 		private void Update()
 		{
-			transform.position += (Vector3)movementInput * (moveSpeed * Time.deltaTime);
+			transform.position += movementInput * (moveSpeed * Time.deltaTime);
 		}
 	}
 }

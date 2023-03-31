@@ -7,7 +7,6 @@ namespace InputSystem
 {
 	public class SpellSlots : Singleton<SpellSlots>
 	{
-		[SerializeField] private float spellOffset;
 		[SerializeField] private List<Spell> slots;
 		
 		private new void Awake()
@@ -31,7 +30,7 @@ namespace InputSystem
 
 		private void UseSlot(int slotNum)
 		{
-			Instantiate(slots[slotNum - 1], transform.position + PlayerMovement.I.lastDirection * spellOffset, Quaternion.identity);
+			Instantiate(slots[slotNum - 1], transform.position, Quaternion.identity);
 		}
 	}
 }

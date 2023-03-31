@@ -1,11 +1,19 @@
-﻿using UnityEngine;
+﻿using Spells;
+using UnityEngine;
+using Utilities;
 
 namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
-		private float health;
+		[SerializeField] private int contactDamage;
+		public int ContactDamage
+		{
+			get => contactDamage;
+			private set => contactDamage = value;
+		}
 
+		[SerializeField] private float health;
 		public float Health
 		{
 			get => health;
@@ -14,6 +22,15 @@ namespace Enemies
 				health = value;
 				if (health < 0)
 					Destroy(gameObject);
+			}
+		}
+
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (col.CompareTag("Spell") && col.TryGetComponent(out Spell spell) && !spell.enemySpell)
+			{
+				Health -= spell.contactDamage;
+				Destroy(spell.gameObject);
 			}
 		}
 	}
