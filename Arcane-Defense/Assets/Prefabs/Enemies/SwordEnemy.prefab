@@ -174,4 +174,7 @@ MonoBehaviour:
   contactDamage: 10
   health: 10
   moveSpeed: 0.4
-  stoppingDistance: 0.15
+  playerStopDist: 0.15
+  houseStopDist: 0.5
+  playerChaseDistance: 1.5
+  houseChaseDistance: 10
