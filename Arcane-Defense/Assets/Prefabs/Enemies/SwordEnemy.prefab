@@ -172,5 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactDamage: 10
+  health: 10
   moveSpeed: 0.4
   stoppingDistance: 0.15
