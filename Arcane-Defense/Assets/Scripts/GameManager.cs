@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Enemies;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
@@ -97,5 +98,10 @@ public class GameManager : Singleton<GameManager>
 
 	public void ExitGame()
 	{
+		#if UNITY_EDITOR
+				EditorApplication.isPlaying = false;
+		#else
+		            Application.Quit();
+		#endif
 	}
 }
