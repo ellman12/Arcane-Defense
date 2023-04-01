@@ -21,7 +21,10 @@ namespace Enemies
 			{
 				health = value;
 				if (health < 0)
+				{
 					Destroy(gameObject);
+					GameManager.I.EnemiesAlive--;
+				}
 			}
 		}
 
