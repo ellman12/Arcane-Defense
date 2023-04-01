@@ -58,10 +58,14 @@ public class GameManager : Singleton<GameManager>
 	
 	private IEnumerator AdvanceRound()
 	{
+		remainingTime = secondsUntilNextRound;
+		secondsRemainingText.text = remainingTime.ToString();
+		
 		foreach (var enemySpawner in enemySpawners)
 			enemySpawner.enabled = false;
+
+		yield return null;
 		
-		remainingTime = secondsUntilNextRound;
 		while (remainingTime > 0)
 		{
 			remainingTime -= Time.deltaTime;
@@ -69,12 +73,14 @@ public class GameManager : Singleton<GameManager>
 			yield return null;
 		}
 
+		secondsRemainingText.text = "";
+		
+		yield return null;
+		
 		roundNumber++;
 		roundText.text = $"Round {roundNumber}";
-		
-		yield return new WaitForSeconds(0.5f);
 
-		secondsRemainingText.text = "";
+		yield return new WaitForSeconds(0.1f);
 		
 		foreach (var enemySpawner in enemySpawners)
 			enemySpawner.enabled = true;
