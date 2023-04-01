@@ -1316,8 +1316,8 @@ MonoBehaviour:
   firstBossRound: 5
   oddsOfBossRound: 0.3
   oddsOfBossRoundDelta: 0.05
-  secondsUntilNextRound: 20
-  startingEnemiesAmount: 5
+  secondsUntilNextRound: 6
+  startingEnemiesAmount: 3
   minAdditionalEnemies: 1
   maxAdditionalEnemies: 6
   enemySpawners:

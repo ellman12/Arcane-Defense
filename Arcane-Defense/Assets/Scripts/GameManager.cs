@@ -52,6 +52,7 @@ public class GameManager : Singleton<GameManager>
 	
 	private void Start()
 	{
+		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
 	}
 	
@@ -71,6 +72,10 @@ public class GameManager : Singleton<GameManager>
 
 		roundNumber++;
 		roundText.text = $"Round {roundNumber}";
+		
+		yield return new WaitForSeconds(0.5f);
+
+		secondsRemainingText.text = "";
 		
 		foreach (var enemySpawner in enemySpawners)
 			enemySpawner.enabled = true;
