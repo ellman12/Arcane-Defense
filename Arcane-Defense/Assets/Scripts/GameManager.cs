@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Enemies;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 public class GameManager : Singleton<GameManager>
@@ -52,30 +54,54 @@ public class GameManager : Singleton<GameManager>
 	
 	private void Start()
 	{
+		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
 	}
 	
 	private IEnumerator AdvanceRound()
 	{
+		remainingTime = secondsUntilNextRound;
+		secondsRemainingText.text = remainingTime.ToString();
+		
 		foreach (var enemySpawner in enemySpawners)
 			enemySpawner.enabled = false;
+
+		yield return null;
 		
-		remainingTime = secondsUntilNextRound;
 		while (remainingTime > 0)
 		{
 			remainingTime -= Time.deltaTime;
-			int rounded = Mathf.RoundToInt(remainingTime);
-			secondsRemainingText.text = $"{rounded} {(rounded == 1 ? "Second" : "Seconds")} Remaining";
+			secondsRemainingText.text = Mathf.RoundToInt(remainingTime).ToString();
 			yield return null;
 		}
 
+		secondsRemainingText.text = "";
+		
+		yield return null;
+		
 		roundNumber++;
 		roundText.text = $"Round {roundNumber}";
+
+		yield return new WaitForSeconds(0.1f);
 		
 		foreach (var enemySpawner in enemySpawners)
 			enemySpawner.enabled = true;
 
 		enemiesThisRound += Random.Range(minAdditionalEnemies, maxAdditionalEnemies);
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound;
+	}
+	
+	public void RestartGame()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void ExitGame()
+	{
+		#if UNITY_EDITOR
+				EditorApplication.isPlaying = false;
+		#else
+		            Application.Quit();
+		#endif
 	}
 }

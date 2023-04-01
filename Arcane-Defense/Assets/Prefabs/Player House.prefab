@@ -571,6 +571,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424b22488c514774a3534b390514c08a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibilityDuration: 1
+  invincibilityDeltaTime: 0.1
+  healthBar: {fileID: 4709495692598376957}
+  spriteRenderer: {fileID: 7242884019637484137}
+  gameOverScreen: {fileID: 0}
   health: 0
   maxHealth: 0
-  healthBar: {fileID: 4709495692598376957}
+  invincible: 0

@@ -9,12 +9,12 @@ public abstract class Singleton<T> : MonoBehaviour where T : Object
 		if (I == null)
 		{
 			I = FindObjectOfType<T>();
-			DontDestroyOnLoad(gameObject);
+			// DontDestroyOnLoad(gameObject);
 		}
 		else
 		{
 			Debug.LogWarning($"{gameObject.name} destroyed.", this);
-			Destroy(gameObject);
+			// Destroy(gameObject);
 		}
 	}
 }
