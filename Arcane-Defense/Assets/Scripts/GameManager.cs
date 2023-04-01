@@ -65,8 +65,7 @@ public class GameManager : Singleton<GameManager>
 		while (remainingTime > 0)
 		{
 			remainingTime -= Time.deltaTime;
-			int rounded = Mathf.RoundToInt(remainingTime);
-			secondsRemainingText.text = $"{rounded} {(rounded == 1 ? "Second" : "Seconds")} Remaining";
+			secondsRemainingText.text = Mathf.RoundToInt(remainingTime).ToString();
 			yield return null;
 		}
 
