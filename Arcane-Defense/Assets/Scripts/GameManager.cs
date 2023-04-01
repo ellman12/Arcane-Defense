@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Enemies;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 public class GameManager : Singleton<GameManager>
@@ -87,5 +88,14 @@ public class GameManager : Singleton<GameManager>
 
 		enemiesThisRound += Random.Range(minAdditionalEnemies, maxAdditionalEnemies);
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound;
+	}
+	
+	public void RestartGame()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void ExitGame()
+	{
 	}
 }

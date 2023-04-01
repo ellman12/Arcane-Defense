@@ -575,6 +575,7 @@ MonoBehaviour:
   invincibilityDeltaTime: 0.1
   healthBar: {fileID: 4709495692598376957}
   spriteRenderer: {fileID: 7242884019637484137}
+  gameOverScreen: {fileID: 0}
   health: 0
   maxHealth: 0
   invincible: 0

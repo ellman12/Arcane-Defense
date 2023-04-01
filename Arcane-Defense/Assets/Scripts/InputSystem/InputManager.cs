@@ -1,4 +1,4 @@
-using System;
+using UnityEngine;
 
 namespace InputSystem
 {
@@ -8,9 +8,16 @@ namespace InputSystem
 		
 		private new void Awake()
 		{
+			Time.timeScale = 1;
 			PlayerInput = new PlayerInput();
 			PlayerInput.Enable();
 			base.Awake();
+		}
+
+		private void OnDestroy()
+		{
+			PlayerInput.Disable();
+			PlayerInput = null;
 		}
 	}
 }

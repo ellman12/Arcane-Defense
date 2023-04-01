@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Enemies;
+using InputSystem;
 using UnityEngine;
 using Utilities;
 
@@ -11,6 +12,7 @@ namespace Player
 		[SerializeField] private float invincibilityDuration, invincibilityDeltaTime;
 		[SerializeField] private StatBar healthBar;
 		[SerializeField] private SpriteRenderer spriteRenderer;
+		[SerializeField] private GameObject gameOverScreen;
 
 		[SerializeField, ReadOnly] private int health, maxHealth;
 		[SerializeField, ReadOnly] private bool invincible;
@@ -23,7 +25,12 @@ namespace Player
 				health = value;
 				healthBar.SetValue(health);
 				if (health <= 0)
+				{
 					Destroy(gameObject);
+					gameOverScreen.SetActive(true);
+					Time.timeScale = 0;
+					InputManager.I.PlayerInput.Disable();
+				}
 			}
 		}
 
