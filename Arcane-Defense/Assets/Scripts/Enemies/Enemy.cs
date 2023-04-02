@@ -1,11 +1,12 @@
 ﻿using Spells;
 using UnityEngine;
-using Utilities;
 
 namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
+		public static bool canMove = true;
+		
 		[SerializeField] private int contactDamage;
 		public int ContactDamage
 		{
