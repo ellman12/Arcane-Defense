@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Spells
 {
-	public class WaterShield : Spell
+	public class ShieldSpell : Spell
 	{
 		[SerializeField] private float duration;
 

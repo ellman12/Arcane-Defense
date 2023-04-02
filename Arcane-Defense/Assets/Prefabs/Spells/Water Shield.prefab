@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2455627475579811559}
-  - component: {fileID: 7569034187995724530}
   - component: {fileID: 2256711988591302596}
   - component: {fileID: 2305314075198190144}
+  - component: {fileID: 7569034187995724530}
   m_Layer: 3
   m_Name: Water Shield
   m_TagString: Spell
@@ -122,21 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7569034187995724530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3812357849308700604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f5f91e554b4a4bb373d72818043301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpell: 0
-  contactDamage: 0
-  duration: 10
 --- !u!61 &2256711988591302596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,6 +194,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &7569034187995724530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812357849308700604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f5f91e554b4a4bb373d72818043301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpell: 0
+  contactDamage: 0
+  duration: 10
 --- !u!1 &5719012116473979818
 GameObject:
   m_ObjectHideFlags: 0
