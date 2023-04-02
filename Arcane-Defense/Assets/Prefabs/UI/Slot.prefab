@@ -296,4 +296,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotIcon: {fileID: 672858959183615742}
+  cooldownFill: {fileID: 8823931042987007065}
   spellInfo: {fileID: 0}

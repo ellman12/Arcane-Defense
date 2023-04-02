@@ -221,10 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680c8ae950ef4af7b5a18091031f6fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellOffset: 0.3
-  slots:
-  - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
-  - {fileID: 7569034187995724530, guid: 70d484e94ab393f44af4c44626cc56f9, type: 3}
+  spellSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &3848199136964207680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invincibilityDuration: 1
   invincibilityDeltaTime: 0.1
+  healthBar: {fileID: 0}
   health: 0
   maxHealth: 0
   invincible: 0

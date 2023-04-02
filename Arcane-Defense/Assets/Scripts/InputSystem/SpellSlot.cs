@@ -1,22 +1,43 @@
+using System.Collections;
 using Spells;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Player
+namespace InputSystem
 {
-    public class SpellSlot : MonoBehaviour
-    {
-        [SerializeField] private Image slotIcon;
+	public class SpellSlot : MonoBehaviour
+	{
+		[SerializeField] private Image slotIcon;
 
-        [SerializeField] private SpellInfo spellInfo;
+		[SerializeField] private Slider cooldownFill;
 
-        private float cooldownRemaining;
+		[SerializeField] public SpellInfo spellInfo;
 
-        private void OnEnable() => slotIcon.sprite = spellInfo.spellIcon;
+		private float cooldownRemaining;
 
-        private void UseSpell()
-        {
-            
-        }
-    }
+		private void OnEnable()
+		{
+			cooldownFill.value = 0;
+			slotIcon.sprite = spellInfo.spellIcon;
+		}
+
+		public void UseSpell()
+		{
+			if (cooldownRemaining > 0) return;
+			Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
+			StartCoroutine(SpellCooldown());
+		}
+
+		private IEnumerator SpellCooldown()
+		{
+			cooldownRemaining = spellInfo.cooldown;
+			while (cooldownRemaining > 0)
+			{
+				cooldownRemaining -= Time.deltaTime;
+				cooldownFill.value = cooldownRemaining / spellInfo.cooldown * 100;
+				yield return null;
+			}
+			cooldownFill.value = 0;
+		}
+	}
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Spells;
+using System.Collections.Generic;
 using UnityEngine;
 using CBC = UnityEngine.InputSystem.InputAction.CallbackContext;
 
@@ -7,7 +6,7 @@ namespace InputSystem
 {
 	public class SpellSlots : Singleton<SpellSlots>
 	{
-		[SerializeField] private List<Spell> slots;
+		[SerializeField] private List<SpellSlot> spellSlots;
 		
 		private new void Awake()
 		{
@@ -28,9 +27,6 @@ namespace InputSystem
 		private void Slot5Use(CBC _) => UseSlot(5);
 		private void Slot6Use(CBC _) => UseSlot(6);
 
-		private void UseSlot(int slotNum)
-		{
-			Instantiate(slots[slotNum - 1], transform.position, Quaternion.identity);
-		}
+		private void UseSlot(int slotNum) => spellSlots[slotNum - 1].UseSpell();
 	}
 }

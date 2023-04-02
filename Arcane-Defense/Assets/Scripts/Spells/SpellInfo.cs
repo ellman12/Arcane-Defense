@@ -11,6 +11,6 @@ namespace Spells
 		
 		public int damage;
 
-		public Spell spell;
+		public GameObject spell;
 	}
 }
