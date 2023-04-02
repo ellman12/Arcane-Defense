@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpell: 0
   contactDamage: 0
+  parentName: Player
   duration: 10
 --- !u!1 &5719012116473979818
 GameObject:

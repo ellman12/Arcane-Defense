@@ -1,18 +1,19 @@
-﻿using InputSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spells
 {
 	public class ShieldSpell : Spell
 	{
+		[SerializeField] private string parentName;
 		[SerializeField] private float duration;
 
 		private float remainingDuration;
 		
 		private void Start()
 		{
-			transform.position = PlayerMovement.I.transform.position;
-			transform.parent = PlayerMovement.I.transform;
+			GameObject parent = GameObject.Find(parentName);
+			transform.position = parent.transform.position;
+			transform.parent = parent.transform;
 			
 			Destroy(gameObject, duration);
 		}
