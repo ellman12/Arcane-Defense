@@ -20,7 +20,7 @@ namespace Enemies
 		private void Update()
 		{
 			if (attackingHouse || player == null || house == null) return;
-
+		
 			Vector2 playerDirection = player.position - transform.position;
 			Vector2 houseDirection = house.position - transform.position;
 			
