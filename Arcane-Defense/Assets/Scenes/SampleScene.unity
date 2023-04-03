@@ -560,7 +560,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 10, y: 10}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &390542086
 MonoBehaviour:
@@ -2901,6 +2901,22 @@ PrefabInstance:
     - target: {fileID: 823096970855808428, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095717888894043400, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
+      propertyPath: uiElement
+      value: 
+      objectReference: {fileID: 390542085}
+    - target: {fileID: 2095717888894043400, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
+      propertyPath: slotsWidth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095717888894043400, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
+      propertyPath: widthDelta
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095717888894043400, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
+      propertyPath: slotsHeight
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2095717888894043400, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
       propertyPath: spellSlots.Array.data[0]
