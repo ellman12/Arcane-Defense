@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spells
 {
@@ -8,5 +7,7 @@ namespace Spells
 		public bool enemySpell;
 
 		public float contactDamage;
+
+		public float knockbackForce, knockbackDuration;
 	}
 }

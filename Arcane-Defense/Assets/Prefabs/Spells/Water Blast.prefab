@@ -145,4 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpell: 0
   contactDamage: 4
+  knockbackForce: 2
+  knockbackDuration: 0.1
   speed: 2
+  target: {fileID: 0}
