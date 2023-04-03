@@ -49,15 +49,12 @@ namespace Spells
 			while (true)
 			{
 				currentTarget = GetClosestTarget();
-
-				Vector3 targetPos = currentTarget.transform.position;
-				Vector3 spellPos = Camera.main!.WorldToScreenPoint(transform.position);
-				targetPos.x -= spellPos.x;
-				targetPos.y -= spellPos.y;
-				float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
-				transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 				
-				yield return new WaitForSeconds(shotCooldown);
+				Vector3 direction = currentTarget.position - transform.position;
+				float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+				transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+				
+				yield return new WaitForSeconds(0.1f);
 			}
 		}
 
@@ -66,8 +63,8 @@ namespace Spells
 			while (true)
 			{
 				var newSpell = Instantiate(spell, transform.position, Quaternion.identity) as LinearTravelSpell ?? throw new NullReferenceException();
-				newSpell.start = transform;
 				newSpell.target = currentTarget;
+				newSpell.speed *= 2;
 				yield return new WaitForSeconds(shotCooldown);
 			}
 		}
