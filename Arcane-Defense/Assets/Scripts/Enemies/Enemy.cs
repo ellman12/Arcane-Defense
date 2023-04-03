@@ -6,7 +6,7 @@ namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
-		public static bool canMove = true;
+		[HideInInspector] public bool canMove = true;
 
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance;

@@ -7,15 +7,21 @@ namespace Spells
 	{
 		[SerializeField] private float duration;
 
+		private Enemy[] enemies;
+
 		private void Start()
 		{
-			Enemy.canMove = false;
+			enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+			foreach (Enemy enemy in enemies)
+				enemy.canMove = false;
+			
 			Destroy(gameObject, duration);
 		}
 
 		private void OnDestroy()
 		{
-			Enemy.canMove = true;
+			foreach (Enemy enemy in enemies)
+				enemy.canMove = true;
 		}
 	}
 }
