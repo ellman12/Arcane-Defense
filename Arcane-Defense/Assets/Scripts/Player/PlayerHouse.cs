@@ -52,7 +52,6 @@ namespace Player
 
 		private void OnTriggerStay2D(Collider2D col)
 		{
-			Debug.Log(col.tag);
 			if (col.CompareTag("Enemy"))
 				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
 		}
