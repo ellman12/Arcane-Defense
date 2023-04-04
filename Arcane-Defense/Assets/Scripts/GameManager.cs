@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using Spells;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -62,10 +63,16 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 	
-	private void Start()
+	private new void Awake()
 	{
 		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
+		
+		if (ChainLightning.targets != null || ChainLightning.targets.Count > 0)
+		{
+			Debug.Log(ChainLightning.targets.Count);
+			ChainLightning.targets.Clear();
+		}
 	}
 	
 	private IEnumerator AdvanceRound()

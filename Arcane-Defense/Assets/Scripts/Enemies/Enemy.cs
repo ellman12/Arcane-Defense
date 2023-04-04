@@ -41,8 +41,12 @@ namespace Enemies
 				{
 					canMove = false;
 					Health -= chainLightning.contactDamage;
-					
-					if (Health <=0) Destroy(spell.gameObject);
+
+					if (Health <= 0)
+					{
+						Destroy(spell.gameObject);
+						ChainLightning.targets.Remove(transform);
+					}
 				}
 				else
 				{
