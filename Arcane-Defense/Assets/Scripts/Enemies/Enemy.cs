@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Spells;
 using UnityEngine;
 
@@ -33,16 +33,26 @@ namespace Enemies
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D col)
+		private void OnTriggerStay2D(Collider2D col)
 		{
+			Debug.Log(col.tag);
 			if (col.CompareTag("Spell") && col.TryGetComponent(out Spell spell) && !spell.enemySpell)
 			{
-				Health -= spell.contactDamage;
-				Destroy(spell.gameObject);
+				if (col.TryGetComponent(out ChainLightning chainLightning))
+				{
+					Debug.Log("here");
+					canMove = false;
+					Health -= chainLightning.contactDamage;
+				}
+				else
+				{
+					Health -= spell.contactDamage;
+					Destroy(spell.gameObject);
 
-				Vector2 knockbackDirection = (col.transform.position - transform.position).normalized;
-				rigidbody.AddForce(-knockbackDirection * (spell.knockbackForce - knockbackResistance), ForceMode2D.Impulse);
-				StartCoroutine(StopKnockback(spell.knockbackDuration));
+					Vector2 knockbackDirection = (col.transform.position - transform.position).normalized;
+					rigidbody.AddForce(-knockbackDirection * (spell.knockbackForce - knockbackResistance), ForceMode2D.Impulse);
+					StartCoroutine(StopKnockback(spell.knockbackDuration));
+				}
 			}
 		}
 
