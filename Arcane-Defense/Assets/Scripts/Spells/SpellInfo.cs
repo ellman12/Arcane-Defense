@@ -9,8 +9,6 @@ namespace Spells
 
 		public float cooldown;
 		
-		public int damage;
-
 		public GameObject spell;
 	}
 }

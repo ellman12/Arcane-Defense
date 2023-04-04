@@ -152,6 +152,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot7"",
+                    ""type"": ""Button"",
+                    ""id"": ""af25ce4f-cc4a-452b-9c98-0186ca901072"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -220,6 +229,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Slot6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94442b75-0f77-4db0-8be3-ae63c433344d"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -237,6 +257,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Spells_Slot4 = m_Spells.FindAction("Slot4", throwIfNotFound: true);
         m_Spells_Slot5 = m_Spells.FindAction("Slot5", throwIfNotFound: true);
         m_Spells_Slot6 = m_Spells.FindAction("Slot6", throwIfNotFound: true);
+        m_Spells_Slot7 = m_Spells.FindAction("Slot7", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,6 +371,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Spells_Slot4;
     private readonly InputAction m_Spells_Slot5;
     private readonly InputAction m_Spells_Slot6;
+    private readonly InputAction m_Spells_Slot7;
     public struct SpellsActions
     {
         private @PlayerInput m_Wrapper;
@@ -360,6 +382,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Slot4 => m_Wrapper.m_Spells_Slot4;
         public InputAction @Slot5 => m_Wrapper.m_Spells_Slot5;
         public InputAction @Slot6 => m_Wrapper.m_Spells_Slot6;
+        public InputAction @Slot7 => m_Wrapper.m_Spells_Slot7;
         public InputActionMap Get() { return m_Wrapper.m_Spells; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -387,6 +410,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot6.started += instance.OnSlot6;
             @Slot6.performed += instance.OnSlot6;
             @Slot6.canceled += instance.OnSlot6;
+            @Slot7.started += instance.OnSlot7;
+            @Slot7.performed += instance.OnSlot7;
+            @Slot7.canceled += instance.OnSlot7;
         }
 
         private void UnregisterCallbacks(ISpellsActions instance)
@@ -409,6 +435,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot6.started -= instance.OnSlot6;
             @Slot6.performed -= instance.OnSlot6;
             @Slot6.canceled -= instance.OnSlot6;
+            @Slot7.started -= instance.OnSlot7;
+            @Slot7.performed -= instance.OnSlot7;
+            @Slot7.canceled -= instance.OnSlot7;
         }
 
         public void RemoveCallbacks(ISpellsActions instance)
@@ -438,5 +467,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSlot4(InputAction.CallbackContext context);
         void OnSlot5(InputAction.CallbackContext context);
         void OnSlot6(InputAction.CallbackContext context);
+        void OnSlot7(InputAction.CallbackContext context);
     }
 }
