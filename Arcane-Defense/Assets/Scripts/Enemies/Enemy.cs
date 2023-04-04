@@ -35,14 +35,14 @@ namespace Enemies
 
 		private void OnTriggerStay2D(Collider2D col)
 		{
-			Debug.Log(col.tag);
 			if (col.CompareTag("Spell") && col.TryGetComponent(out Spell spell) && !spell.enemySpell)
 			{
 				if (col.TryGetComponent(out ChainLightning chainLightning))
 				{
-					Debug.Log("here");
 					canMove = false;
 					Health -= chainLightning.contactDamage;
+					
+					if (Health <=0) Destroy(spell.gameObject);
 				}
 				else
 				{

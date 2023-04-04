@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using InputSystem;
 using UnityEngine;
 
@@ -17,12 +17,12 @@ namespace Spells
 		private const int MAX_NUMBER_TARGETS = 3;
 		private static int targetsAttacked;
 		private Transform target;
-		private readonly HashSet<Transform> targets = new();
+		private static readonly HashSet<Transform> targets = new(MAX_NUMBER_TARGETS);
 
 		private void Start()
 		{
 			lineRenderer.positionCount = posCount;
-			target = FindClosestTarget(transform.position, targetSearchRadius, layerMask);
+			target = FindClosestTarget(PlayerMovement.I.transform.position, targetSearchRadius, layerMask);
 		}
 
 		private void FixedUpdate()
@@ -41,13 +41,13 @@ namespace Spells
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (targetsAttacked < MAX_NUMBER_TARGETS && !targets.Contains(col.transform))
-			{
-				targetsAttacked--;
-				target = col.transform;
-				targets.Add(target);
-				Instantiate(gameObject, target.position, Quaternion.identity);
-			}
+			// if (targetsAttacked < MAX_NUMBER_TARGETS && !targets.Contains(col.transform))
+			// {
+			// 	targetsAttacked--;
+			// 	target = col.transform;
+			// 	targets.Add(target);
+			// 	Instantiate(gameObject, target.position, Quaternion.identity);
+			// }
 		}
 
 		private static Transform FindClosestTarget(Vector2 center, float radius, LayerMask targetLayer)
