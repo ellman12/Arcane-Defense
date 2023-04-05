@@ -13,7 +13,7 @@ namespace Spells
 			if (target == null)
 			{
 				targetPos = Input.mousePosition;
-				spellPos = Camera.main!.WorldToScreenPoint(transform.position);
+				spellPos = MainCamera.I.camera!.WorldToScreenPoint(transform.position);
 			}
 			else
 			{

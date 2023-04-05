@@ -7,11 +7,14 @@ public class MainCamera : Singleton<MainCamera>
 	[SerializeField] private Vector2 minBounds;
 	[SerializeField] private Vector2 maxBounds;
 
+	[HideInInspector] public new Camera camera;
+
 	private Transform target;
 	private Vector3 _;
 
 	private void Start()
 	{
+		camera = Camera.main;
 		target = PlayerMovement.I.transform;
 	}
 
