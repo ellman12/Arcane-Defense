@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using CBC = UnityEngine.InputSystem.InputAction.CallbackContext;
 
@@ -8,7 +7,7 @@ namespace InputSystem
 	{
 		[SerializeField] private float moveSpeed;
 		
-		private Vector3 movementInput;
+		[HideInInspector] public Vector3 movementInput;
 
 		private void Start()
 		{

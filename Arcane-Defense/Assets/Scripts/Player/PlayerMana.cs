@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using InputSystem;
+using UnityEngine;
 using Utilities;
 
 namespace Player
@@ -7,7 +8,7 @@ namespace Player
 	{
 		[SerializeField] private StatBar manaBar;
 		[SerializeField] private float regenRate;
-		[SerializeField] private int regenAmount;
+		[SerializeField] private int regenAmountMoving, regenAmountStationary;
 		
 		[SerializeField, ReadOnly] private int mana, maxMana;
 
@@ -40,6 +41,6 @@ namespace Player
 			InvokeRepeating(nameof(RegenerateMana), 0, regenRate);
 		}
 
-		private void RegenerateMana() => Mana += regenAmount;
+		private void RegenerateMana() => Mana += PlayerMovement.I.movementInput == Vector3.zero ? regenAmountStationary : regenAmountMoving;
 	}
 }
