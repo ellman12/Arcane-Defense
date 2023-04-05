@@ -20,8 +20,8 @@ namespace Spells
 		private void Start()
 		{
 			Vector3 mousePosition = Input.mousePosition;
-			mousePosition.z = -Camera.main.transform.position.z;
-			Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+			mousePosition.z = -MainCamera.I.camera.transform.position.z;
+			Vector3 worldPosition = MainCamera.I.camera.ScreenToWorldPoint(mousePosition);
 			transform.position = worldPosition;
 			
 			StartCoroutine(Target());
