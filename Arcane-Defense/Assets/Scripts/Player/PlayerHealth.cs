@@ -13,12 +13,15 @@ namespace Player
 		[SerializeField, ReadOnly] private int health, maxHealth;
 		[SerializeField, ReadOnly] private bool invincible;
 
-		private int Health
+		public int Health
 		{
 			get => health;
 			set
 			{
 				health = value;
+				if (health > MaxHealth)
+					health = MaxHealth;
+				
 				healthBar.SetValue(health);
 				if (health <= 0)
 					Destroy(gameObject);
@@ -37,7 +40,7 @@ namespace Player
 
 		private void Start()
 		{
-			MaxHealth = Health = 100;
+			Health = MaxHealth = 100;
 		}
 
 		private void OnTriggerStay2D(Collider2D col)

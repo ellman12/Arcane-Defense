@@ -1,14 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using Spells;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using Random = UnityEngine.Random;
 
 public class GameManager : Singleton<GameManager>
 {
+	public EventHandler RoundAdvance;
+
 	[SerializeField, Tooltip("The round that is guaranteed to be the first boss round.")]
 	private int firstBossRound;
 
@@ -39,6 +44,12 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField, ReadOnly]
 	private int roundNumber = 1, enemiesThisRound, enemiesAlive;
 
+	public int RoundNumber
+	{
+		get => roundNumber;
+		private set => roundNumber = value;
+	}
+	
 	public int RemainingAmountToSpawn { get; set; }
 
 	public int EnemiesAlive
@@ -81,6 +92,8 @@ public class GameManager : Singleton<GameManager>
 		
 		roundNumber++;
 		roundText.text = $"Round {roundNumber}";
+		yield return null;
+		RoundAdvance?.Invoke(this, EventArgs.Empty);
 
 		yield return new WaitForSeconds(0.1f);
 		
