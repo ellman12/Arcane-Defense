@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
+using Enemies;
 using InputSystem;
 using UnityEngine;
+using Utilities;
 
 namespace Spells
 {
@@ -18,15 +18,14 @@ namespace Spells
 
 		private const int MAX_NUMBER_TARGETS = 4;
 		private static int targetsAttacked;
-		private Transform start, target;
-		public static readonly HashSet<Transform> targets = new(MAX_NUMBER_TARGETS);
+		public Transform start;
+		[SerializeField, ReadOnly] private Transform target;
+		private int spellNumber;
 
 		private void Start()
 		{
 			target = FindClosestUniqueTarget(PlayerMovement.I.transform.position, targetSearchRadius, layerMask);
 			if (targetsAttacked >= MAX_NUMBER_TARGETS || target == null) Destroy(gameObject);
-
-			start = targets.Count > 0 ? targets.Last() : PlayerMovement.I.transform;
 	
 			lineRenderer.positionCount = posCount;
 		}
@@ -47,12 +46,13 @@ namespace Spells
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (targetsAttacked < MAX_NUMBER_TARGETS && !targets.Contains(col.transform))
+			if (col.TryGetComponent(out Enemy enemy) && !enemy.targeted)
 			{
-				targetsAttacked++;
-				target = col.transform;
-				targets.Add(target);
-				Instantiate(gameObject, target.position, Quaternion.identity);
+				enemy.canMove = false;
+				enemy.targeted = true;
+				var childChain = Instantiate(gameObject, target.position, Quaternion.identity);
+				childChain.name = "Chain Lightning (Clone)";
+				childChain.GetComponent<ChainLightning>().start = target;
 			}
 		}
 
@@ -63,10 +63,10 @@ namespace Spells
 			Collider2D[] enemies = Physics2D.OverlapCircleAll(center, radius, targetLayer);
 			float minDistance = Mathf.Infinity;
 			Transform closestTarget = null;
-			foreach (Collider2D enemy in enemies.Where(target => !targets.Contains(target.transform)))
+			foreach (Collider2D enemy in enemies)
 			{
 				float distance = Vector2.Distance(center, enemy.transform.position);
-				if (distance < minDistance)
+				if (distance < minDistance && !enemy.GetComponent<Enemy>().targeted)
 				{
 					minDistance = distance;
 					closestTarget = enemy.transform;

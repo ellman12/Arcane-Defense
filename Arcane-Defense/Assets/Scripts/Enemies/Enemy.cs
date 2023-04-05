@@ -6,7 +6,7 @@ namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
-		[HideInInspector] public bool canMove = true;
+		[HideInInspector] public bool canMove = true, targeted;
 
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance;
@@ -35,18 +35,13 @@ namespace Enemies
 
 		private void OnTriggerStay2D(Collider2D col)
 		{
-			if (col.CompareTag("Spell") && col.TryGetComponent(out Spell spell) && !spell.enemySpell)
+			if (col.TryGetComponent(out Spell spell) && !spell.enemySpell)
 			{
 				if (col.TryGetComponent(out ChainLightning chainLightning))
 				{
-					canMove = false;
 					Health -= chainLightning.contactDamage;
 
-					if (Health <= 0)
-					{
-						Destroy(spell.gameObject);
-						ChainLightning.targets.Remove(transform);
-					}
+					if (Health <= 0) Destroy(spell.gameObject);
 				}
 				else
 				{

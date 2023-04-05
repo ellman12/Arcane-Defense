@@ -63,16 +63,10 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 	
-	private new void Awake()
+	private void Start()
 	{
 		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
-		
-		if (ChainLightning.targets != null || ChainLightning.targets.Count > 0)
-		{
-			Debug.Log(ChainLightning.targets.Count);
-			ChainLightning.targets.Clear();
-		}
 	}
 	
 	private IEnumerator AdvanceRound()
