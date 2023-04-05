@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using Spells;
 using TMPro;
 using UnityEditor;
 using UnityEngine;

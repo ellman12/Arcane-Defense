@@ -24,8 +24,11 @@ namespace InputSystem
 		public void UseSpell()
 		{
 			if (cooldownRemaining > 0) return;
-			Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
+			GameObject newSpell = Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
 			StartCoroutine(SpellCooldown());
+
+			if (spellInfo.name == "Chain Lightning")
+				newSpell.GetComponent<ChainLightning>().start = PlayerMovement.I.transform;
 		}
 
 		private IEnumerator SpellCooldown()

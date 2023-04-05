@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Spells;
 using UnityEngine;
 
@@ -6,7 +6,8 @@ namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
-		[HideInInspector] public bool canMove = true;
+		[HideInInspector] public bool canMove = true, targeted;
+		private bool alive = true;
 
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance;
@@ -25,24 +26,34 @@ namespace Enemies
 			set
 			{
 				health = value;
-				if (health < 0)
+				if (health <= 0 && alive)
 				{
+					alive = false;
 					Destroy(gameObject);
 					GameManager.I.EnemiesAlive--;
 				}
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D col)
+		private void OnTriggerStay2D(Collider2D col)
 		{
-			if (col.CompareTag("Spell") && col.TryGetComponent(out Spell spell) && !spell.enemySpell)
+			if (col.TryGetComponent(out Spell spell) && !spell.enemySpell)
 			{
-				Health -= spell.contactDamage;
-				Destroy(spell.gameObject);
+				if (col.TryGetComponent(out ChainLightning chainLightning))
+				{
+					Health -= chainLightning.contactDamage;
 
-				Vector2 knockbackDirection = (col.transform.position - transform.position).normalized;
-				rigidbody.AddForce(-knockbackDirection * (spell.knockbackForce - knockbackResistance), ForceMode2D.Impulse);
-				StartCoroutine(StopKnockback(spell.knockbackDuration));
+					if (Health <= 0) Destroy(spell.gameObject);
+				}
+				else
+				{
+					Health -= spell.contactDamage;
+					Destroy(spell.gameObject);
+
+					Vector2 knockbackDirection = (col.transform.position - transform.position).normalized;
+					rigidbody.AddForce(-knockbackDirection * (spell.knockbackForce - knockbackResistance), ForceMode2D.Impulse);
+					StartCoroutine(StopKnockback(spell.knockbackDuration));
+				}
 			}
 		}
 
