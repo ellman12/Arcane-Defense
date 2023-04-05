@@ -1,4 +1,5 @@
 using System.Collections;
+using Player;
 using Spells;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,8 +24,9 @@ namespace InputSystem
 
 		public void UseSpell()
 		{
-			if (cooldownRemaining > 0) return;
+			if (cooldownRemaining > 0 || PlayerMana.I.Mana < spellInfo.mana) return;
 			GameObject newSpell = Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
+			PlayerMana.I.Mana -= spellInfo.mana;
 			StartCoroutine(SpellCooldown());
 
 			if (spellInfo.name == "Chain Lightning")

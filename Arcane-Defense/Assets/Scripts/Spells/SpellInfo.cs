@@ -8,6 +8,8 @@ namespace Spells
 		public Sprite spellIcon;
 
 		public float cooldown;
+
+		public int mana;
 		
 		public GameObject spell;
 	}

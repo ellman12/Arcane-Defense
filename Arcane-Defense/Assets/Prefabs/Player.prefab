@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7856025300415667314}
   - component: {fileID: 2095717888894043400}
   - component: {fileID: 3848199136964207680}
+  - component: {fileID: 3245416477998442654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -221,13 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680c8ae950ef4af7b5a18091031f6fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  uiElement: {fileID: 0}
+  slotsWidth: 100
+  widthDelta: 100
+  slotsHeight: 80
 --- !u!114 &3848199136964207680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +244,20 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   invincible: 0
+--- !u!114 &3245416477998442654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139849220129260930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5594d560b84300a0a0971f6db5157e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaBar: {fileID: 0}
+  regenRate: 0.5
+  regenAmount: 2
+  mana: 0
+  maxMana: 0
