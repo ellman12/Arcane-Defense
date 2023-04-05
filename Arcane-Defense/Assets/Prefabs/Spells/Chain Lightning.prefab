@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpell: 0
-  contactDamage: 0
+  contactDamage: 0.1
   knockbackForce: 0
   knockbackDuration: 0
   lineRenderer: {fileID: 1051736841059118319}

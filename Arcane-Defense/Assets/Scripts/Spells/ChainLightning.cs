@@ -19,29 +19,37 @@ namespace Spells
 		private const int MAX_NUMBER_TARGETS = 4;
 		private static int targetsAttacked;
 		public Transform start;
-		[SerializeField, ReadOnly] private Transform target;
+		private Transform target;
 		private int spellNumber;
 
 		private void Start()
 		{
 			target = FindClosestUniqueTarget(PlayerMovement.I.transform.position, targetSearchRadius, layerMask);
 			if (targetsAttacked >= MAX_NUMBER_TARGETS || target == null) Destroy(gameObject);
-	
+
 			lineRenderer.positionCount = posCount;
+			targetsAttacked++;
 		}
 
 		private void FixedUpdate()
 		{
-			for (int i = 1; i < posCount - 1; i++)
+			try
 			{
-				Vector2 position = Vector2.Lerp(start.position, target.transform.position, (float) i / posCount);
-				position.x += Random.Range(xDeltaMin, xDeltaMax);
-				position.y += Random.Range(yDeltaMin, yDeltaMax);
-				lineRenderer.SetPosition(i, position);
-			}
+				for (int i = 1; i < posCount - 1; i++)
+				{
+					Vector2 position = Vector2.Lerp(start.position, target.transform.position, (float) i / posCount);
+					position.x += Random.Range(xDeltaMin, xDeltaMax);
+					position.y += Random.Range(yDeltaMin, yDeltaMax);
+					lineRenderer.SetPosition(i, position);
+				}
 
-			lineRenderer.SetPosition(0, start.position);
-			lineRenderer.SetPosition(posCount - 1, target.transform.position);
+				lineRenderer.SetPosition(0, start.position);
+				lineRenderer.SetPosition(posCount - 1, target.transform.position);
+			}
+			catch (MissingReferenceException)
+			{
+				Destroy(gameObject);
+			}
 		}
 
 		private void OnTriggerEnter2D(Collider2D col)
@@ -72,7 +80,19 @@ namespace Spells
 					closestTarget = enemy.transform;
 				}
 			}
+
 			return closestTarget;
+		}
+
+		private void OnDestroy()
+		{
+			targetsAttacked--;
+			if (target != null)
+			{
+				Enemy enemy = target.GetComponent<Enemy>();
+				enemy.canMove = true;
+				enemy.targeted = false;
+			}
 		}
 	}
 }
