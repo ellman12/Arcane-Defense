@@ -7,6 +7,7 @@ namespace Enemies
 	public abstract class Enemy : MonoBehaviour
 	{
 		[HideInInspector] public bool canMove = true, targeted;
+		private bool alive = true;
 
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance;
@@ -25,8 +26,9 @@ namespace Enemies
 			set
 			{
 				health = value;
-				if (health < 0)
+				if (health <= 0 && alive)
 				{
+					alive = false;
 					Destroy(gameObject);
 					GameManager.I.EnemiesAlive--;
 				}
