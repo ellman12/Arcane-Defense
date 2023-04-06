@@ -6,6 +6,17 @@ namespace Spells
 	{
 		[SerializeField] private string parentName;
 		[SerializeField] private float duration;
+		[SerializeField] private int health;
+		private int Health
+		{
+			get => health;
+			set
+			{
+				health = value;
+				if (health <= 0)
+					Destroy(gameObject);
+			}
+		}
 
 		private float remainingDuration;
 		
@@ -18,6 +29,15 @@ namespace Spells
 			transform.parent = target.transform;
 			
 			Destroy(gameObject, duration);
+		}
+
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (col.TryGetComponent(out Spell other) && enemySpell != other.enemySpell)
+			{
+				Health--;
+				Destroy(other.gameObject);
+			}
 		}
 	}
 }
