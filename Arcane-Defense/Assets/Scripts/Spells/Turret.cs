@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Utilities;
 
@@ -9,7 +8,7 @@ namespace Spells
 	{
 		[SerializeField] private float targetingRange, shotCooldown, enemyInRangeCheckCooldown;
 
-		[SerializeField] private Spell spell;
+		[SerializeField] private LinearTravelSpell spell;
 
 		[SerializeField] private LayerMask layerMask;
 
@@ -76,8 +75,8 @@ namespace Spells
 					yield return new WaitForSeconds(enemyInRangeCheckCooldown);
 					continue;
 				}
-				
-				var newSpell = Instantiate(spell, transform.position, Quaternion.identity) as LinearTravelSpell ?? throw new NullReferenceException();
+
+				LinearTravelSpell newSpell = Instantiate(spell, transform.position, Quaternion.identity);
 				newSpell.target = currentTarget;
 				newSpell.speed *= 2;
 				yield return new WaitForSeconds(shotCooldown);

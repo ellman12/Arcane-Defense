@@ -214,6 +214,7 @@ MonoBehaviour:
   knockbackDuration: 0
   parentName: Player House
   duration: 10
+  health: 5
 --- !u!1 &5719012116473979818
 GameObject:
   m_ObjectHideFlags: 0
