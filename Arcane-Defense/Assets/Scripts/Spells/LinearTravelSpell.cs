@@ -5,7 +5,7 @@ namespace Spells
 {
 	public class LinearTravelSpell : Spell
 	{
-		[SerializeField] public float speed;
+		public float speed;
 
 		private void Start() //Thanks Unity Forums, very cool.
 		{
@@ -30,6 +30,15 @@ namespace Spells
 		private void Update()
 		{
 			transform.position += transform.right * (speed * Time.deltaTime);
+		}
+		
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (col.TryGetComponent(out LinearTravelSpell other) && enemySpell != other.enemySpell)
+			{
+				Destroy(gameObject);
+				Destroy(other.gameObject);
+			}
 		}
 	}
 }
