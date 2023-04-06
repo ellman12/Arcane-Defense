@@ -18,13 +18,11 @@ namespace Spells
 
 		private const int MAX_NUMBER_TARGETS = 4;
 		private static int targetsAttacked;
-		public Transform start;
-		private Transform target;
 		private int spellNumber;
 
 		private void Start()
 		{
-			target = FindClosestUniqueTarget(PlayerMovement.I.transform.position, targetSearchRadius, layerMask);
+			target = FindClosestUniqueTarget(start.position, targetSearchRadius, layerMask);
 			if (targetsAttacked >= MAX_NUMBER_TARGETS || target == null) Destroy(gameObject);
 
 			lineRenderer.positionCount = posCount;

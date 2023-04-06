@@ -11,6 +11,6 @@ namespace Spells
 
 		public int mana;
 		
-		public GameObject spell;
+		public Spell spell;
 	}
 }

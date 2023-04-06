@@ -37,12 +37,11 @@ namespace Spells
 			float closestDistance = Mathf.Infinity;
 			for (int i = 0; i < amount; i++)
 			{
-				Collider2D target = targets[i];
-				float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
+				float distanceToTarget = Vector2.Distance(transform.position, targets[i].transform.position);
 				if (distanceToTarget < closestDistance)
 				{
 					closestDistance = distanceToTarget;
-					closestTarget = target.transform;
+					closestTarget = targets[i].transform;
 				}
 			}
 
