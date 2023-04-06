@@ -1,3 +1,4 @@
+using InputSystem;
 using UnityEngine;
 
 namespace Spells
@@ -10,13 +11,13 @@ namespace Spells
 		{
 			if (target == null)
 			{
-				targetPos = Input.mousePosition;
 				startPos = MainCamera.I.camera!.WorldToScreenPoint(transform.position);
+				targetPos = Input.mousePosition;
 			}
 			else
 			{
-				targetPos = target.position;
 				startPos = transform.position;
+				targetPos = target.position;
 			}
 			
 			targetPos.x -= startPos.x;
