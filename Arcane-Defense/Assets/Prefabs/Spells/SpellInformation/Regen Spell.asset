@@ -15,4 +15,4 @@ MonoBehaviour:
   spellIcon: {fileID: 21300000, guid: 6f4046d8a0c7ccc4f9a8de5096ecea09, type: 3}
   cooldown: 20
   mana: 5
-  spell: {fileID: 6719418709954642366, guid: db7f5eb838f82db4186063611746026e, type: 3}
+  spell: {fileID: 6244468834972854479, guid: db7f5eb838f82db4186063611746026e, type: 3}

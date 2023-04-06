@@ -410,11 +410,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285812309}
   m_CullTransparentMesh: 1
---- !u!4 &322932275 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 823096970855808428, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
-  m_PrefabInstance: {fileID: 1869749848}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &325758959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -851,10 +846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade46e8096419d74481df57089c7c798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 322932275}
   smoothTime: 0.3
   minBounds: {x: -7, y: -7}
   maxBounds: {x: 7, y: 7}
+  camera: {fileID: 0}
 --- !u!1 &520769211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1847,7 @@ PrefabInstance:
     - target: {fileID: 6554219594474894408, guid: a49b04aa51cfd7e479c718553a20c914, type: 3}
       propertyPath: spellInfo
       value: 
-      objectReference: {fileID: 11400000, guid: a77076dc6253d9940be0db20e4dfbb1d, type: 2}
+      objectReference: {fileID: 11400000, guid: 718a5610af56354489d2737a941ad3d3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
