@@ -6,8 +6,21 @@ namespace Spells
 	{
 		public bool enemySpell;
 
-		public float contactDamage;
+		public Transform start, target;
 
-		public float knockbackForce, knockbackDuration;
+		protected Vector3 startPos, targetPos;
+		
+		public float contactDamage, knockbackForce, knockbackDuration;
+
+		public void Initialize(bool enemy, Transform s, Transform t)
+		{
+			enemySpell = enemy;
+			
+			if (start == null)
+				start = s;
+			
+			if (target == null)
+				target = t;
+		}
 	}
 }

@@ -11,9 +11,11 @@ namespace Spells
 		
 		private void Start()
 		{
-			GameObject parent = GameObject.Find(parentName);
-			transform.position = parent.transform.position;
-			transform.parent = parent.transform;
+			if (target == null)
+				target = GameObject.Find(parentName).transform;
+
+			transform.position = target.transform.position;
+			transform.parent = target.transform;
 			
 			Destroy(gameObject, duration);
 		}

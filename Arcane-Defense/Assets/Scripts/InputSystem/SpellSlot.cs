@@ -26,6 +26,8 @@ namespace InputSystem
 		{
 			if (cooldownRemaining > 0 || PlayerMana.I.Mana < spellInfo.mana) return;
 			Spell newSpell = Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
+			newSpell.Initialize(false, PlayerMovement.I.transform, null);
+			
 			PlayerMana.I.Mana -= spellInfo.mana;
 			StartCoroutine(SpellCooldown());
 

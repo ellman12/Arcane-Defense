@@ -207,7 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpell: 0
+  start: {fileID: 0}
+  target: {fileID: 0}
   contactDamage: 0
+  knockbackForce: 0
+  knockbackDuration: 0
   parentName: Player House
   duration: 10
 --- !u!1 &5719012116473979818
