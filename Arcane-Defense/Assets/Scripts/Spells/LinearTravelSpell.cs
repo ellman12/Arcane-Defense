@@ -32,18 +32,21 @@ namespace Spells
 		{
 			transform.position += transform.right * (speed * Time.deltaTime);
 		}
-		
+
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.CompareTag("Player"))
+			if (col.TryGetComponent(out LinearTravelSpell other))
 			{
-				Destroy(gameObject);
-				PlayerHealth.I.LoseHealth(contactDamage);
-			}
-			else if (col.TryGetComponent(out LinearTravelSpell other) && enemySpell != other.enemySpell)
-			{
-				Destroy(gameObject);
-				Destroy(other.gameObject);
+				if (col.CompareTag("Player") && enemySpell)
+				{
+					Destroy(gameObject);
+					PlayerHealth.I.LoseHealth(contactDamage);
+				}
+				else if (enemySpell != other.enemySpell)
+				{
+					Destroy(gameObject);
+					Destroy(other.gameObject);
+				}
 			}
 		}
 	}
