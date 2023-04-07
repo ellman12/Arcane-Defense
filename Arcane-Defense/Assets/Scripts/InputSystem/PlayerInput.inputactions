@@ -219,8 +219,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ef886e41-e256-4f66-8cf8-764171728034",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9ae2bcd7-25fe-4bec-af63-2122b634bd26",
                     "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a5293dd-1503-403c-b86d-5fc4b97a78fc",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -241,8 +263,30 @@
                 },
                 {
                     "name": "",
+                    "id": "b8d747d6-9df2-4819-8cbd-d784f5efb407",
+                    "path": "<SwitchProControllerHID>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5f2be68e-0152-4e14-be93-b32c3f73ea9e",
                     "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d58e092-fdf7-4340-a8ec-6ce5bb536c93",
+                    "path": "<SwitchProControllerHID>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -263,8 +307,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c8fad95e-f658-42c0-b3f9-4008ec97fcb6",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "52c4bd25-3c29-41d0-80c3-75643773dcec",
                     "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6895747-aad4-466b-a815-8c1d73bc5d99",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -285,8 +351,30 @@
                 },
                 {
                     "name": "",
+                    "id": "0ef5c245-4f1a-4352-9f1b-61d37341a73e",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot7",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "badb97f7-c8d6-4151-b109-aa3edcfce404",
                     "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slot8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b34e04ab-25e8-4a54-bcf4-1ed63c88e738",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
