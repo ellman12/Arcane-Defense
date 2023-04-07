@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3245416477998442654}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  movementInput: {x: 0, y: 0, z: 0}
 --- !u!114 &2095717888894043400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaBar: {fileID: 0}
   regenRate: 0.5
-  regenAmount: 2
+  regenAmountMoving: 1
+  regenAmountStationary: 2
   mana: 0
   maxMana: 0

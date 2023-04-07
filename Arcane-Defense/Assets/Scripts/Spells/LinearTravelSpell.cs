@@ -1,4 +1,5 @@
 using InputSystem;
+using Player;
 using UnityEngine;
 
 namespace Spells
@@ -34,7 +35,12 @@ namespace Spells
 		
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.TryGetComponent(out LinearTravelSpell other) && enemySpell != other.enemySpell)
+			if (col.CompareTag("Player"))
+			{
+				Destroy(gameObject);
+				PlayerHealth.I.LoseHealth(contactDamage);
+			}
+			else if (col.TryGetComponent(out LinearTravelSpell other) && enemySpell != other.enemySpell)
 			{
 				Destroy(gameObject);
 				Destroy(other.gameObject);

@@ -49,7 +49,7 @@ namespace Player
 				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
 		}
 		
-		private void LoseHealth(int amount)
+		public void LoseHealth(int amount)
 		{
 			if (invincible) return;
 

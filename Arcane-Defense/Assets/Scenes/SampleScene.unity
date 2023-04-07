@@ -2890,14 +2890,6 @@ PrefabInstance:
       propertyPath: manaBar
       value: 
       objectReference: {fileID: 1951026835}
-    - target: {fileID: 3245416477998442654, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
-      propertyPath: regenAmountMoving
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3245416477998442654, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
-      propertyPath: regenAmountStationary
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3848199136964207680, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
       propertyPath: healthBar
       value: 
