@@ -10,17 +10,9 @@ namespace Spells
 
 		private void Start() //Thanks Unity Forums, very cool.
 		{
-			if (target == null)
-			{
-				startPos = MainCamera.I.camera!.WorldToScreenPoint(transform.position);
-				targetPos = Input.mousePosition;
-			}
-			else
-			{
-				startPos = transform.position;
-				targetPos = target.position;
-			}
-			
+			startPos = transform.position;
+			targetPos = target == null ? InputManager.I.CursorPos : target.position;
+
 			targetPos.x -= startPos.x;
 			targetPos.y -= startPos.y;
 			float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
