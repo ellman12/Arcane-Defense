@@ -10,7 +10,9 @@ namespace Spells
 
 		protected Vector3 startPos, targetPos;
 		
-		public float contactDamage, knockbackForce, knockbackDuration;
+		public int contactDamage;
+
+		public float knockbackForce, knockbackDuration;
 
 		public void Initialize(bool enemy, Transform s, Transform t)
 		{
