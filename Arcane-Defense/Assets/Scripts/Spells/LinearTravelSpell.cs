@@ -10,17 +10,9 @@ namespace Spells
 
 		private void Start() //Thanks Unity Forums, very cool.
 		{
-			if (target == null)
-			{
-				startPos = MainCamera.I.camera!.WorldToScreenPoint(transform.position);
-				targetPos = Input.mousePosition;
-			}
-			else
-			{
-				startPos = transform.position;
-				targetPos = target.position;
-			}
-			
+			startPos = transform.position;
+			targetPos = target == null ? InputManager.I.CursorPos : target.position;
+
 			targetPos.x -= startPos.x;
 			targetPos.y -= startPos.y;
 			float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
@@ -32,18 +24,21 @@ namespace Spells
 		{
 			transform.position += transform.right * (speed * Time.deltaTime);
 		}
-		
+
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (col.CompareTag("Player"))
+			if (col.TryGetComponent(out LinearTravelSpell other))
 			{
-				Destroy(gameObject);
-				PlayerHealth.I.LoseHealth(contactDamage);
-			}
-			else if (col.TryGetComponent(out LinearTravelSpell other) && enemySpell != other.enemySpell)
-			{
-				Destroy(gameObject);
-				Destroy(other.gameObject);
+				if (col.CompareTag("Player") && enemySpell)
+				{
+					Destroy(gameObject);
+					PlayerHealth.I.LoseHealth(contactDamage);
+				}
+				else if (enemySpell != other.enemySpell)
+				{
+					Destroy(gameObject);
+					Destroy(other.gameObject);
+				}
 			}
 		}
 	}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System.Collections;
+using InputSystem;
 using UnityEngine;
 using Utilities;
 
@@ -18,11 +19,7 @@ namespace Spells
 
 		private void Start()
 		{
-			Vector3 mousePosition = Input.mousePosition;
-			mousePosition.z = -MainCamera.I.camera.transform.position.z;
-			Vector3 worldPosition = MainCamera.I.camera.ScreenToWorldPoint(mousePosition);
-			transform.position = worldPosition;
-			
+			transform.position = InputManager.I.CursorPos;
 			StartCoroutine(Target());
 			StartCoroutine(AttackTarget());
 		}
