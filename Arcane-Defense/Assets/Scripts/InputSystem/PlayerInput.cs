@@ -216,6 +216,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot8"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f0339c-404f-4ec9-af6d-3baeb6347694"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -293,6 +302,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Slot7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""badb97f7-c8d6-4151-b109-aa3edcfce404"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot8"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -385,6 +405,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Spells_Slot5 = m_Spells.FindAction("Slot5", throwIfNotFound: true);
         m_Spells_Slot6 = m_Spells.FindAction("Slot6", throwIfNotFound: true);
         m_Spells_Slot7 = m_Spells.FindAction("Slot7", throwIfNotFound: true);
+        m_Spells_Slot8 = m_Spells.FindAction("Slot8", throwIfNotFound: true);
         // Cursor
         m_Cursor = asset.FindActionMap("Cursor", throwIfNotFound: true);
         m_Cursor_Cursor = m_Cursor.FindAction("Cursor", throwIfNotFound: true);
@@ -502,6 +523,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Spells_Slot5;
     private readonly InputAction m_Spells_Slot6;
     private readonly InputAction m_Spells_Slot7;
+    private readonly InputAction m_Spells_Slot8;
     public struct SpellsActions
     {
         private @PlayerInput m_Wrapper;
@@ -513,6 +535,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Slot5 => m_Wrapper.m_Spells_Slot5;
         public InputAction @Slot6 => m_Wrapper.m_Spells_Slot6;
         public InputAction @Slot7 => m_Wrapper.m_Spells_Slot7;
+        public InputAction @Slot8 => m_Wrapper.m_Spells_Slot8;
         public InputActionMap Get() { return m_Wrapper.m_Spells; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -543,6 +566,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot7.started += instance.OnSlot7;
             @Slot7.performed += instance.OnSlot7;
             @Slot7.canceled += instance.OnSlot7;
+            @Slot8.started += instance.OnSlot8;
+            @Slot8.performed += instance.OnSlot8;
+            @Slot8.canceled += instance.OnSlot8;
         }
 
         private void UnregisterCallbacks(ISpellsActions instance)
@@ -568,6 +594,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot7.started -= instance.OnSlot7;
             @Slot7.performed -= instance.OnSlot7;
             @Slot7.canceled -= instance.OnSlot7;
+            @Slot8.started -= instance.OnSlot8;
+            @Slot8.performed -= instance.OnSlot8;
+            @Slot8.canceled -= instance.OnSlot8;
         }
 
         public void RemoveCallbacks(ISpellsActions instance)
@@ -644,6 +673,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSlot5(InputAction.CallbackContext context);
         void OnSlot6(InputAction.CallbackContext context);
         void OnSlot7(InputAction.CallbackContext context);
+        void OnSlot8(InputAction.CallbackContext context);
     }
     public interface ICursorActions
     {

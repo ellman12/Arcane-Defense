@@ -10,7 +10,7 @@ namespace InputSystem
 		[SerializeField] private RectTransform uiElement;
 		[SerializeField] private int slotsWidth, widthDelta, slotsHeight;
 
-		private const int NUM_SLOTS = 7;
+		private const int NUM_SLOTS = 8;
 		private readonly Dictionary<int, ValueTuple<int, SpellSlot>> spellSlots = new(NUM_SLOTS);
 
 		private void Start()
@@ -22,6 +22,7 @@ namespace InputSystem
 			InputManager.I.PlayerInput.Spells.Slot5.performed += _ => UseSlot(5);
 			InputManager.I.PlayerInput.Spells.Slot6.performed += _ => UseSlot(6);
 			InputManager.I.PlayerInput.Spells.Slot7.performed += _ => UseSlot(7);
+			InputManager.I.PlayerInput.Spells.Slot8.performed += _ => UseSlot(8);
 			
 			GameManager.I.RoundAdvance += ExpandSlots;
 
