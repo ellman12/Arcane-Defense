@@ -422,6 +422,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a3b0727c-ec3a-40ba-9596-30d691398377",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlotDecrease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6a19549a-d4fd-4ca0-9c82-acc1d86d244a",
                     "path": "<Mouse>/scroll/up",
                     "interactions": "",
@@ -433,8 +444,41 @@
                 },
                 {
                     "name": "",
+                    "id": "0413cb44-dddd-4131-9db0-0cc6b8d63439",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlotIncrease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "64978634-0238-45e6-a831-93841dd00811",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseSelected",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "76e97b13-d92d-4218-9d1d-a41c0f18cdb3",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseSelected",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3614ef29-b5a6-4b1a-acef-27a9fde62c31",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

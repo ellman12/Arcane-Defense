@@ -41,9 +41,9 @@ namespace InputSystem
 			InputManager.I.PlayerInput.Spells.Slot7.performed += _ => UseSlot(7);
 			InputManager.I.PlayerInput.Spells.Slot8.performed += _ => UseSlot(8);
 
-			InputManager.I.PlayerInput.Spells.SlotDecrease.performed += _ => SelectedSlot--;
-			InputManager.I.PlayerInput.Spells.SlotIncrease.performed += _ => SelectedSlot++;
-			InputManager.I.PlayerInput.Spells.UseSelected.performed += _ => UseSlot(SelectedSlot);
+			InputManager.I.PlayerInput.Spells.SlotDecrease.started += _ => SelectedSlot--;
+			InputManager.I.PlayerInput.Spells.SlotIncrease.started += _ => SelectedSlot++;
+			InputManager.I.PlayerInput.Spells.UseSelected.started += _ => UseSlot(SelectedSlot);
 			
 			GameManager.I.RoundAdvance += ExpandSlots;
 
