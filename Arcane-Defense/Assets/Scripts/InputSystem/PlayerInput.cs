@@ -92,6 +92,61 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left Stick"",
+                    ""id"": ""876641f8-1bef-4b13-933f-a738513157d7"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""30756e80-8efe-4531-9523-a2d5c84b31f0"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""4b7dd44e-5b63-4571-ad8e-ce5e10c4cecd"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""d46bb9df-7258-46e4-acfc-4bff4dae5ca6"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""0f5923b3-bdb5-47a0-a90a-458256939916"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -161,6 +216,42 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot8"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f0339c-404f-4ec9-af6d-3baeb6347694"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotDecrease"",
+                    ""type"": ""Value"",
+                    ""id"": ""f1013138-2b91-4007-a5fb-fb638ae50a14"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SlotIncrease"",
+                    ""type"": ""Value"",
+                    ""id"": ""630787d8-262c-447e-9978-269427af9b1b"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UseSelected"",
+                    ""type"": ""Button"",
+                    ""id"": ""4fdc918a-6925-4f03-80bf-cd8d84be73b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +259,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""80708d9a-6203-4f30-9252-5d8d4752e8e2"",
                     ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef886e41-e256-4f66-8cf8-764171728034"",
+                    ""path"": ""<SwitchProControllerHID>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -188,8 +290,30 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""1a5293dd-1503-403c-b86d-5fc4b97a78fc"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""dd19334c-cd26-48ba-ad16-e60d751cc904"",
                     ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8d747d6-9df2-4819-8cbd-d784f5efb407"",
+                    ""path"": ""<SwitchProControllerHID>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -210,8 +334,30 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7d58e092-fdf7-4340-a8ec-6ce5bb536c93"",
+                    ""path"": ""<SwitchProControllerHID>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""19bb9c8f-a5ef-44d1-ac89-aa0d98a67708"",
                     ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8fad95e-f658-42c0-b3f9-4008ec97fcb6"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -232,6 +378,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c6895747-aad4-466b-a815-8c1d73bc5d99"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""94442b75-0f77-4db0-8be3-ae63c433344d"",
                     ""path"": ""<Keyboard>/7"",
                     ""interactions"": """",
@@ -240,6 +397,188 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Slot7"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ef5c245-4f1a-4352-9f1b-61d37341a73e"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""badb97f7-c8d6-4151-b109-aa3edcfce404"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b34e04ab-25e8-4a54-bcf4-1ed63c88e738"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3be58ca-bc30-4008-8da9-36273efd64dd"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotDecrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3b0727c-ec3a-40ba-9596-30d691398377"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotDecrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a19549a-d4fd-4ca0-9c82-acc1d86d244a"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotIncrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0413cb44-dddd-4131-9db0-0cc6b8d63439"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotIncrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64978634-0238-45e6-a831-93841dd00811"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76e97b13-d92d-4218-9d1d-a41c0f18cdb3"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3614ef29-b5a6-4b1a-acef-27a9fde62c31"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Cursor"",
+            ""id"": ""43d04192-7af4-4d35-925d-62b167d6691d"",
+            ""actions"": [
+                {
+                    ""name"": ""Cursor"",
+                    ""type"": ""Value"",
+                    ""id"": ""e3bfd5ab-bd90-4657-92aa-3dd66b2490a3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Right Stick"",
+                    ""id"": ""7ec4803f-091b-4465-99d2-4d0b98d86bb6"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e4ff186f-6a1a-4534-ad6c-115be6cc00e0"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a26a3d77-744a-4c1a-a534-c89c1a210e85"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e4510f5c-55e9-4eb7-9827-c27ffc678727"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2c9fcb5e-3c65-4b9a-8adf-1cfa3b36f4ac"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -258,6 +597,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Spells_Slot5 = m_Spells.FindAction("Slot5", throwIfNotFound: true);
         m_Spells_Slot6 = m_Spells.FindAction("Slot6", throwIfNotFound: true);
         m_Spells_Slot7 = m_Spells.FindAction("Slot7", throwIfNotFound: true);
+        m_Spells_Slot8 = m_Spells.FindAction("Slot8", throwIfNotFound: true);
+        m_Spells_SlotDecrease = m_Spells.FindAction("SlotDecrease", throwIfNotFound: true);
+        m_Spells_SlotIncrease = m_Spells.FindAction("SlotIncrease", throwIfNotFound: true);
+        m_Spells_UseSelected = m_Spells.FindAction("UseSelected", throwIfNotFound: true);
+        // Cursor
+        m_Cursor = asset.FindActionMap("Cursor", throwIfNotFound: true);
+        m_Cursor_Cursor = m_Cursor.FindAction("Cursor", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -372,6 +718,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Spells_Slot5;
     private readonly InputAction m_Spells_Slot6;
     private readonly InputAction m_Spells_Slot7;
+    private readonly InputAction m_Spells_Slot8;
+    private readonly InputAction m_Spells_SlotDecrease;
+    private readonly InputAction m_Spells_SlotIncrease;
+    private readonly InputAction m_Spells_UseSelected;
     public struct SpellsActions
     {
         private @PlayerInput m_Wrapper;
@@ -383,6 +733,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Slot5 => m_Wrapper.m_Spells_Slot5;
         public InputAction @Slot6 => m_Wrapper.m_Spells_Slot6;
         public InputAction @Slot7 => m_Wrapper.m_Spells_Slot7;
+        public InputAction @Slot8 => m_Wrapper.m_Spells_Slot8;
+        public InputAction @SlotDecrease => m_Wrapper.m_Spells_SlotDecrease;
+        public InputAction @SlotIncrease => m_Wrapper.m_Spells_SlotIncrease;
+        public InputAction @UseSelected => m_Wrapper.m_Spells_UseSelected;
         public InputActionMap Get() { return m_Wrapper.m_Spells; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -413,6 +767,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot7.started += instance.OnSlot7;
             @Slot7.performed += instance.OnSlot7;
             @Slot7.canceled += instance.OnSlot7;
+            @Slot8.started += instance.OnSlot8;
+            @Slot8.performed += instance.OnSlot8;
+            @Slot8.canceled += instance.OnSlot8;
+            @SlotDecrease.started += instance.OnSlotDecrease;
+            @SlotDecrease.performed += instance.OnSlotDecrease;
+            @SlotDecrease.canceled += instance.OnSlotDecrease;
+            @SlotIncrease.started += instance.OnSlotIncrease;
+            @SlotIncrease.performed += instance.OnSlotIncrease;
+            @SlotIncrease.canceled += instance.OnSlotIncrease;
+            @UseSelected.started += instance.OnUseSelected;
+            @UseSelected.performed += instance.OnUseSelected;
+            @UseSelected.canceled += instance.OnUseSelected;
         }
 
         private void UnregisterCallbacks(ISpellsActions instance)
@@ -438,6 +804,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot7.started -= instance.OnSlot7;
             @Slot7.performed -= instance.OnSlot7;
             @Slot7.canceled -= instance.OnSlot7;
+            @Slot8.started -= instance.OnSlot8;
+            @Slot8.performed -= instance.OnSlot8;
+            @Slot8.canceled -= instance.OnSlot8;
+            @SlotDecrease.started -= instance.OnSlotDecrease;
+            @SlotDecrease.performed -= instance.OnSlotDecrease;
+            @SlotDecrease.canceled -= instance.OnSlotDecrease;
+            @SlotIncrease.started -= instance.OnSlotIncrease;
+            @SlotIncrease.performed -= instance.OnSlotIncrease;
+            @SlotIncrease.canceled -= instance.OnSlotIncrease;
+            @UseSelected.started -= instance.OnUseSelected;
+            @UseSelected.performed -= instance.OnUseSelected;
+            @UseSelected.canceled -= instance.OnUseSelected;
         }
 
         public void RemoveCallbacks(ISpellsActions instance)
@@ -455,6 +833,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public SpellsActions @Spells => new SpellsActions(this);
+
+    // Cursor
+    private readonly InputActionMap m_Cursor;
+    private List<ICursorActions> m_CursorActionsCallbackInterfaces = new List<ICursorActions>();
+    private readonly InputAction m_Cursor_Cursor;
+    public struct CursorActions
+    {
+        private @PlayerInput m_Wrapper;
+        public CursorActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cursor => m_Wrapper.m_Cursor_Cursor;
+        public InputActionMap Get() { return m_Wrapper.m_Cursor; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CursorActions set) { return set.Get(); }
+        public void AddCallbacks(ICursorActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CursorActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CursorActionsCallbackInterfaces.Add(instance);
+            @Cursor.started += instance.OnCursor;
+            @Cursor.performed += instance.OnCursor;
+            @Cursor.canceled += instance.OnCursor;
+        }
+
+        private void UnregisterCallbacks(ICursorActions instance)
+        {
+            @Cursor.started -= instance.OnCursor;
+            @Cursor.performed -= instance.OnCursor;
+            @Cursor.canceled -= instance.OnCursor;
+        }
+
+        public void RemoveCallbacks(ICursorActions instance)
+        {
+            if (m_Wrapper.m_CursorActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICursorActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CursorActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CursorActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CursorActions @Cursor => new CursorActions(this);
     public interface IMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -468,5 +892,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSlot5(InputAction.CallbackContext context);
         void OnSlot6(InputAction.CallbackContext context);
         void OnSlot7(InputAction.CallbackContext context);
+        void OnSlot8(InputAction.CallbackContext context);
+        void OnSlotDecrease(InputAction.CallbackContext context);
+        void OnSlotIncrease(InputAction.CallbackContext context);
+        void OnUseSelected(InputAction.CallbackContext context);
+    }
+    public interface ICursorActions
+    {
+        void OnCursor(InputAction.CallbackContext context);
     }
 }

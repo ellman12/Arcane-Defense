@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcd1daf16424735adfdfc9e27480b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamepadActive: 0
+  rightStickDeadZone: 0.01
 --- !u!114 &7856025300415667314
 MonoBehaviour:
   m_ObjectHideFlags: 0
