@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using Player;
+﻿using Player;
 using UnityEngine;
 
 namespace Spells

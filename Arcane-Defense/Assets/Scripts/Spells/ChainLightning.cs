@@ -1,8 +1,6 @@
 using System.Runtime.CompilerServices;
 using Enemies;
-using InputSystem;
 using UnityEngine;
-using Utilities;
 
 namespace Spells
 {
