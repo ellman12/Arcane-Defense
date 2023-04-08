@@ -16,10 +16,7 @@ namespace InputSystem
 				void OnInput(CBC context) => rightStickInput = context.ReadValue<Vector2>();
 			}
 			else
-			{
-				Debug.LogWarning("Cursor destroyed.");
 				Destroy(gameObject);
-			}
 		}
 		
 		private void Update() => transform.position = PlayerMovement.I.transform.position + rightStickInput;
