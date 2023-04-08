@@ -225,6 +225,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotDecrease"",
+                    ""type"": ""Value"",
+                    ""id"": ""f1013138-2b91-4007-a5fb-fb638ae50a14"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SlotIncrease"",
+                    ""type"": ""Value"",
+                    ""id"": ""630787d8-262c-447e-9978-269427af9b1b"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UseSelected"",
+                    ""type"": ""Button"",
+                    ""id"": ""4fdc918a-6925-4f03-80bf-cd8d84be73b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -403,6 +430,83 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Slot8"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3be58ca-bc30-4008-8da9-36273efd64dd"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotDecrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3b0727c-ec3a-40ba-9596-30d691398377"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotDecrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a19549a-d4fd-4ca0-9c82-acc1d86d244a"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotIncrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0413cb44-dddd-4131-9db0-0cc6b8d63439"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotIncrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64978634-0238-45e6-a831-93841dd00811"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76e97b13-d92d-4218-9d1d-a41c0f18cdb3"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3614ef29-b5a6-4b1a-acef-27a9fde62c31"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSelected"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -494,6 +598,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Spells_Slot6 = m_Spells.FindAction("Slot6", throwIfNotFound: true);
         m_Spells_Slot7 = m_Spells.FindAction("Slot7", throwIfNotFound: true);
         m_Spells_Slot8 = m_Spells.FindAction("Slot8", throwIfNotFound: true);
+        m_Spells_SlotDecrease = m_Spells.FindAction("SlotDecrease", throwIfNotFound: true);
+        m_Spells_SlotIncrease = m_Spells.FindAction("SlotIncrease", throwIfNotFound: true);
+        m_Spells_UseSelected = m_Spells.FindAction("UseSelected", throwIfNotFound: true);
         // Cursor
         m_Cursor = asset.FindActionMap("Cursor", throwIfNotFound: true);
         m_Cursor_Cursor = m_Cursor.FindAction("Cursor", throwIfNotFound: true);
@@ -612,6 +719,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Spells_Slot6;
     private readonly InputAction m_Spells_Slot7;
     private readonly InputAction m_Spells_Slot8;
+    private readonly InputAction m_Spells_SlotDecrease;
+    private readonly InputAction m_Spells_SlotIncrease;
+    private readonly InputAction m_Spells_UseSelected;
     public struct SpellsActions
     {
         private @PlayerInput m_Wrapper;
@@ -624,6 +734,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Slot6 => m_Wrapper.m_Spells_Slot6;
         public InputAction @Slot7 => m_Wrapper.m_Spells_Slot7;
         public InputAction @Slot8 => m_Wrapper.m_Spells_Slot8;
+        public InputAction @SlotDecrease => m_Wrapper.m_Spells_SlotDecrease;
+        public InputAction @SlotIncrease => m_Wrapper.m_Spells_SlotIncrease;
+        public InputAction @UseSelected => m_Wrapper.m_Spells_UseSelected;
         public InputActionMap Get() { return m_Wrapper.m_Spells; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -657,6 +770,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot8.started += instance.OnSlot8;
             @Slot8.performed += instance.OnSlot8;
             @Slot8.canceled += instance.OnSlot8;
+            @SlotDecrease.started += instance.OnSlotDecrease;
+            @SlotDecrease.performed += instance.OnSlotDecrease;
+            @SlotDecrease.canceled += instance.OnSlotDecrease;
+            @SlotIncrease.started += instance.OnSlotIncrease;
+            @SlotIncrease.performed += instance.OnSlotIncrease;
+            @SlotIncrease.canceled += instance.OnSlotIncrease;
+            @UseSelected.started += instance.OnUseSelected;
+            @UseSelected.performed += instance.OnUseSelected;
+            @UseSelected.canceled += instance.OnUseSelected;
         }
 
         private void UnregisterCallbacks(ISpellsActions instance)
@@ -685,6 +807,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Slot8.started -= instance.OnSlot8;
             @Slot8.performed -= instance.OnSlot8;
             @Slot8.canceled -= instance.OnSlot8;
+            @SlotDecrease.started -= instance.OnSlotDecrease;
+            @SlotDecrease.performed -= instance.OnSlotDecrease;
+            @SlotDecrease.canceled -= instance.OnSlotDecrease;
+            @SlotIncrease.started -= instance.OnSlotIncrease;
+            @SlotIncrease.performed -= instance.OnSlotIncrease;
+            @SlotIncrease.canceled -= instance.OnSlotIncrease;
+            @UseSelected.started -= instance.OnUseSelected;
+            @UseSelected.performed -= instance.OnUseSelected;
+            @UseSelected.canceled -= instance.OnUseSelected;
         }
 
         public void RemoveCallbacks(ISpellsActions instance)
@@ -762,6 +893,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSlot6(InputAction.CallbackContext context);
         void OnSlot7(InputAction.CallbackContext context);
         void OnSlot8(InputAction.CallbackContext context);
+        void OnSlotDecrease(InputAction.CallbackContext context);
+        void OnSlotIncrease(InputAction.CallbackContext context);
+        void OnUseSelected(InputAction.CallbackContext context);
     }
     public interface ICursorActions
     {
