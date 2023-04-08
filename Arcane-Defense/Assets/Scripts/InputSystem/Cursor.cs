@@ -9,15 +9,19 @@ namespace InputSystem
 
 		private void Start()
 		{
-			InputManager.I.PlayerInput.Cursor.Cursor.performed += OnInput;
-			InputManager.I.PlayerInput.Cursor.Cursor.canceled += OnInput;
-
-			void OnInput(CBC context) => rightStickInput = context.ReadValue<Vector2>();
+			if (InputManager.I.gamepadActive)
+			{
+				InputManager.I.PlayerInput.Cursor.Cursor.performed += OnInput;
+				InputManager.I.PlayerInput.Cursor.Cursor.canceled += OnInput;
+				void OnInput(CBC context) => rightStickInput = context.ReadValue<Vector2>();
+			}
+			else
+			{
+				Debug.LogWarning("Cursor destroyed.");
+				Destroy(gameObject);
+			}
 		}
 		
-		private void Update()
-		{
-			transform.position = PlayerMovement.I.transform.position + rightStickInput;
-		}
+		private void Update() => transform.position = PlayerMovement.I.transform.position + rightStickInput;
 	}
 }
