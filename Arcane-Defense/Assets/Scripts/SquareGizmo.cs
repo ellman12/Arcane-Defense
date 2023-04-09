@@ -3,10 +3,8 @@
 [ExecuteInEditMode]
 public class SquareGizmo : MonoBehaviour
 {
-	[SerializeField] private Color color = Color.white;
-	private BoxCollider2D boxCollider;
-
-	private void Start() => boxCollider = GetComponent<BoxCollider2D>();
+	[SerializeField] private Color color;
+	[SerializeField] private BoxCollider2D boxCollider;
 
 	private void OnDrawGizmos()
 	{
