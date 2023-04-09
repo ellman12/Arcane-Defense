@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enemies;
 using UnityEngine;
 using Utilities;
@@ -43,12 +44,12 @@ namespace Player
 			Health = MaxHealth = 100;
 		}
 
-		private void OnTriggerStay2D(Collider2D col)
+		private void OnCollisionStay2D(Collision2D collision)
 		{
-			if (col.CompareTag("Enemy"))
-				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
+			if (collision.gameObject.CompareTag("Enemy"))
+				LoseHealth(collision.gameObject.GetComponent<Enemy>().ContactDamage);
 		}
-		
+
 		public void LoseHealth(int amount)
 		{
 			if (invincible) return;
