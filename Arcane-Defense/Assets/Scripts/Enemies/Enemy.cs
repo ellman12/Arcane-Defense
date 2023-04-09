@@ -50,6 +50,9 @@ namespace Enemies
 					Health -= spell.contactDamage;
 					Destroy(spell.gameObject);
 
+					float knockbackForce = spell.knockbackForce - knockbackResistance;
+					if (knockbackForce <= 0) return;
+					
 					Vector2 knockbackDirection = (col.transform.position - transform.position).normalized;
 					rigidbody.AddForce(-knockbackDirection * (spell.knockbackForce - knockbackResistance), ForceMode2D.Impulse);
 					StartCoroutine(StopKnockback(spell.knockbackDuration));
