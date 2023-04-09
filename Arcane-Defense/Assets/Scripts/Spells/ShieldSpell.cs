@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Spells
 {
@@ -22,11 +23,11 @@ namespace Spells
 		
 		private void Start()
 		{
-			if (target == null)
-				target = GameObject.Find(parentName).transform;
+			if (!String.IsNullOrWhiteSpace(parentName))
+				start = GameObject.Find(parentName).transform;
 
-			transform.position = target.transform.position;
-			transform.parent = target.transform;
+			transform.position = start.transform.position;
+			transform.parent = start.transform;
 			
 			Destroy(gameObject, duration);
 		}
