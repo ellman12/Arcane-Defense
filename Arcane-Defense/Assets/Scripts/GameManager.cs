@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
@@ -40,6 +40,10 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private TextMeshProUGUI roundText, secondsRemainingText;
 
+	[SerializeField] private Boss boss;
+
+	[SerializeField] private Transform bossSpawnPos;
+
 	[SerializeField, ReadOnly]
 	private int roundNumber = 1, enemiesThisRound, enemiesAlive;
 
@@ -61,7 +65,7 @@ public class GameManager : Singleton<GameManager>
 				StartCoroutine(AdvanceRound());
 		}
 	}
-	
+
 	private void Start()
 	{
 		secondsRemainingText.text = "";
@@ -100,7 +104,15 @@ public class GameManager : Singleton<GameManager>
 			enemySpawner.enabled = true;
 
 		enemiesThisRound += Random.Range(minAdditionalEnemies, maxAdditionalEnemies);
+
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound;
+
+		if (roundNumber == firstBossRound || (roundNumber > firstBossRound && Random.Range(0, 1) < oddsOfBossRound))
+		{
+			Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
+			oddsOfBossRound += oddsOfBossRoundDelta;
+			EnemiesAlive = ++enemiesThisRound;
+		}
 	}
 	
 	public void RestartGame()
