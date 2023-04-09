@@ -175,15 +175,15 @@ MonoBehaviour:
   targeted: 0
   rigidbody: {fileID: 5784293692637379121}
   knockbackResistance: 20
-  contactDamage: 20
-  health: 100
-  moveSpeed: 0.5
+  contactDamage: 10
+  health: 50
+  moveSpeed: 0.2
   playerStopDist: 0.15
   houseStopDist: 0.5
   playerChaseDistance: 2
   houseChaseDistance: 20
   attackCooldown: 100
-  defendCooldown: 10
+  defendCooldown: 30
   attackRange: 6
   spells:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
