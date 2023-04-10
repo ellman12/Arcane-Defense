@@ -24,7 +24,7 @@ namespace InputSystem
 
 		public void UseSpell()
 		{
-			if (cooldownRemaining > 0 || PlayerMana.I.Mana < spellInfo.mana) return;
+			if (cooldownRemaining > 0 || PlayerMana.I.Mana < spellInfo.mana || (spellInfo.name == "Water Shield" && PlayerMovement.I.transform.childCount >= 1) || (spellInfo.name == "House Water Shield" && PlayerHouse.I.transform.GetComponentInChildren<ShieldSpell>() != null)) return;
 			Spell newSpell = Instantiate(spellInfo.spell, PlayerMovement.I.transform.position, Quaternion.identity);
 			newSpell.Initialize(false, PlayerMovement.I.transform, null);
 			
