@@ -29,8 +29,8 @@ namespace Enemies
 				if (health <= 0 && alive)
 				{
 					alive = false;
-					Destroy(gameObject);
 					GameManager.I.EnemiesAlive--;
+					Destroy(gameObject);
 				}
 			}
 		}
