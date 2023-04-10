@@ -233,7 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpell: 0
-  contactDamage: 0.1
+  start: {fileID: 0}
+  target: {fileID: 0}
+  contactDamage: 1
   knockbackForce: 0
   knockbackDuration: 0
   lineRenderer: {fileID: 1051736841059118319}
@@ -246,5 +248,3 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  start: {fileID: 0}
-  target: {fileID: 0}

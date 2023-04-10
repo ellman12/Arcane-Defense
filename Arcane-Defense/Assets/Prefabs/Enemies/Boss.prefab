@@ -175,7 +175,9 @@ MonoBehaviour:
   targeted: 0
   rigidbody: {fileID: 5784293692637379121}
   knockbackResistance: 20
+  lightningInvincibilityTime: 0.1
   contactDamage: 10
+  invincible: 0
   health: 50
   moveSpeed: 0.2
   playerStopDist: 0.15

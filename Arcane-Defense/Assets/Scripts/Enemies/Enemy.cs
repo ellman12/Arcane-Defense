@@ -1,6 +1,7 @@
 using System.Collections;
 using Spells;
 using UnityEngine;
+using Utilities;
 
 namespace Enemies
 {
@@ -10,8 +11,10 @@ namespace Enemies
 		private bool alive = true;
 
 		[SerializeField] private new Rigidbody2D rigidbody;
-		[SerializeField] private float knockbackResistance;
+		[SerializeField] private float knockbackResistance, lightningInvincibilityTime;
 		[SerializeField] private int contactDamage;
+		
+		[SerializeField, ReadOnly] private bool invincible;
 
 		public int ContactDamage
 		{
@@ -20,7 +23,7 @@ namespace Enemies
 		}
 
 		[SerializeField] private float health;
-		public float Health
+		private float Health
 		{
 			get => health;
 			set
@@ -41,13 +44,13 @@ namespace Enemies
 			{
 				if (col.TryGetComponent(out ChainLightning chainLightning))
 				{
-					Health -= chainLightning.contactDamage;
+					LoseHealth(chainLightning.contactDamage);
 
 					if (Health <= 0) Destroy(spell.gameObject);
 				}
 				else
 				{
-					Health -= spell.contactDamage;
+					LoseHealth(spell.contactDamage);
 					Destroy(spell.gameObject);
 
 					float knockbackForce = spell.knockbackForce - knockbackResistance;
@@ -58,6 +61,22 @@ namespace Enemies
 					StartCoroutine(StopKnockback(spell.knockbackDuration));
 				}
 			}
+		}
+		
+		private void LoseHealth(int amount)
+		{
+			if (invincible) return;
+
+			Health -= amount;
+
+			StartCoroutine(BecomeTemporarilyInvincible());
+		}
+
+		private IEnumerator BecomeTemporarilyInvincible()
+		{
+			invincible = true;
+			yield return new WaitForSeconds(lightningInvincibilityTime);
+			invincible = false;
 		}
 
 		private IEnumerator StopKnockback(float knockbackDuration)
