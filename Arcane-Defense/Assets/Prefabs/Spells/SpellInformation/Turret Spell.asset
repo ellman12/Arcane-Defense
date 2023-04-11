@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130d89c405f4884a6c5b8c34b0432ce, type: 3}
   m_Name: Turret Spell
   m_EditorClassIdentifier: 
-  spellIcon: {fileID: 21300000, guid: 585217b914e37124597437b364e63320, type: 3}
+  spellIcon: {fileID: 21300000, guid: 9a0c96d42d5137647ae581962296da89, type: 3}
   cooldown: 20
   mana: 40
   spell: {fileID: 2695283259629652568, guid: 3620f0c8b9d45944a978af5eee302ee6, type: 3}
