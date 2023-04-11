@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130d89c405f4884a6c5b8c34b0432ce, type: 3}
   m_Name: Water Blast
   m_EditorClassIdentifier: 
-  spellIcon: {fileID: 21300000, guid: 6f4046d8a0c7ccc4f9a8de5096ecea09, type: 3}
+  spellIcon: {fileID: 2039648999, guid: 5dd8294036eb0cf47b6478380c09eff9, type: 3}
   cooldown: 0.3
   mana: 2
   spell: {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
