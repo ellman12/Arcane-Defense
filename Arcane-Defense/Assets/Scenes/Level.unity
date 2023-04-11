@@ -268,6 +268,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+--- !u!114 &72142662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518147450154779204, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+  m_PrefabInstance: {fileID: 72142661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e876d4fba0e4468fb73439680d948657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218870051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1715,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+--- !u!114 &1220953147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518147450154779204, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+  m_PrefabInstance: {fileID: 1220953146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e876d4fba0e4468fb73439680d948657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1241242413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2272,6 +2294,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+--- !u!114 &1539888793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518147450154779204, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+  m_PrefabInstance: {fileID: 1539888792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e876d4fba0e4468fb73439680d948657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1599196149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,8 +2851,10 @@ MonoBehaviour:
   minAdditionalEnemies: 1
   maxAdditionalEnemies: 6
   enemySpawners:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1220953147}
+  - {fileID: 2010347613}
+  - {fileID: 1539888793}
+  - {fileID: 72142662}
   roundText: {fileID: 2041180713}
   secondsRemainingText: {fileID: 218870053}
   boss: {fileID: 5736950426583918929, guid: aab98ac93eeefdd47a496c914fc2c805, type: 3}
@@ -3679,6 +3714,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+--- !u!114 &2010347613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518147450154779204, guid: e23fc418125788a4cb543de73e154b51, type: 3}
+  m_PrefabInstance: {fileID: 2010347612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e876d4fba0e4468fb73439680d948657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041180711
 GameObject:
   m_ObjectHideFlags: 0
