@@ -625,6 +625,56 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""TitleScreen"",
+            ""id"": ""4586d676-4cbd-4e4a-827d-c227091df79d"",
+            ""actions"": [
+                {
+                    ""name"": ""StartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba003a8d-2150-45d1-a2fb-dd7f76bf4d2f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9e1f084a-b0c9-4aa3-9a71-842752d3ac0d"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3d0d720-8ad6-4e50-8b26-a075d20ed20a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""734ce84b-2e11-4f78-8e22-8914d8f3ed3e"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -648,6 +698,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Cursor
         m_Cursor = asset.FindActionMap("Cursor", throwIfNotFound: true);
         m_Cursor_Cursor = m_Cursor.FindAction("Cursor", throwIfNotFound: true);
+        // TitleScreen
+        m_TitleScreen = asset.FindActionMap("TitleScreen", throwIfNotFound: true);
+        m_TitleScreen_StartGame = m_TitleScreen.FindAction("StartGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -923,6 +976,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public CursorActions @Cursor => new CursorActions(this);
+
+    // TitleScreen
+    private readonly InputActionMap m_TitleScreen;
+    private List<ITitleScreenActions> m_TitleScreenActionsCallbackInterfaces = new List<ITitleScreenActions>();
+    private readonly InputAction m_TitleScreen_StartGame;
+    public struct TitleScreenActions
+    {
+        private @PlayerInput m_Wrapper;
+        public TitleScreenActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @StartGame => m_Wrapper.m_TitleScreen_StartGame;
+        public InputActionMap Get() { return m_Wrapper.m_TitleScreen; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TitleScreenActions set) { return set.Get(); }
+        public void AddCallbacks(ITitleScreenActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TitleScreenActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TitleScreenActionsCallbackInterfaces.Add(instance);
+            @StartGame.started += instance.OnStartGame;
+            @StartGame.performed += instance.OnStartGame;
+            @StartGame.canceled += instance.OnStartGame;
+        }
+
+        private void UnregisterCallbacks(ITitleScreenActions instance)
+        {
+            @StartGame.started -= instance.OnStartGame;
+            @StartGame.performed -= instance.OnStartGame;
+            @StartGame.canceled -= instance.OnStartGame;
+        }
+
+        public void RemoveCallbacks(ITitleScreenActions instance)
+        {
+            if (m_Wrapper.m_TitleScreenActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITitleScreenActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TitleScreenActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TitleScreenActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TitleScreenActions @TitleScreen => new TitleScreenActions(this);
     public interface IMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -944,5 +1043,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface ICursorActions
     {
         void OnCursor(InputAction.CallbackContext context);
+    }
+    public interface ITitleScreenActions
+    {
+        void OnStartGame(InputAction.CallbackContext context);
     }
 }
