@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130d89c405f4884a6c5b8c34b0432ce, type: 3}
   m_Name: House Water Shield
   m_EditorClassIdentifier: 
-  spellIcon: {fileID: 21300000, guid: 585217b914e37124597437b364e63320, type: 3}
+  spellIcon: {fileID: 21300000, guid: 53d8a8f2543953e45aca4f12c9251e2e, type: 3}
   cooldown: 4
   mana: 10
   spell: {fileID: 7569034187995724530, guid: 83c7542728527914ca782de65272a88f, type: 3}
