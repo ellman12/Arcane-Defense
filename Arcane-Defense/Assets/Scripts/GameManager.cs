@@ -40,6 +40,8 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private TextMeshProUGUI roundText, secondsRemainingText;
 
+	[SerializeField] private GameObject bossRoundIcon;
+
 	[SerializeField] private Boss boss;
 
 	[SerializeField] private Transform bossSpawnPos;
@@ -112,7 +114,10 @@ public class GameManager : Singleton<GameManager>
 			Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
 			oddsOfBossRound += oddsOfBossRoundDelta;
 			EnemiesAlive = ++enemiesThisRound;
+			bossRoundIcon.SetActive(true);
 		}
+		else
+			bossRoundIcon.SetActive(false);
 	}
 	
 	public void RestartGame()
