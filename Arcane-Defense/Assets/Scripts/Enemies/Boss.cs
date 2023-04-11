@@ -11,7 +11,6 @@ namespace Enemies
 	{
 		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, defendCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;
-		[SerializeField] private ShieldSpell shieldSpell;
 
 		private Transform player, house;
 		private bool attackingHouse;
@@ -22,7 +21,6 @@ namespace Enemies
 			house = PlayerHouse.I.transform;
 			
 			StartCoroutine(Attack());
-			StartCoroutine(Defend());
 		}
 
 		private void Update()
@@ -57,18 +55,6 @@ namespace Enemies
 					yield return new WaitForSeconds(attackCooldown);
 				}
 				yield return null;
-			}
-		}
-
-		private IEnumerator Defend()
-		{
-			while (true)
-			{
-				if (transform.childCount > 0) yield return null;
-				
-				ShieldSpell newSpell = Instantiate(shieldSpell, transform.position, Quaternion.identity);
-				newSpell.Initialize(true, transform, null);
-				yield return new WaitForSeconds(defendCooldown);
 			}
 		}
 	}
