@@ -1,4 +1,4 @@
-﻿using Enemies;
+using Enemies;
 using UnityEngine;
 
 namespace Spells

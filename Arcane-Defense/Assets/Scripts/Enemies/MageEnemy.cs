@@ -22,6 +22,8 @@ namespace Enemies
 
 		private void Update()
 		{
+			if (!canMove) return;
+			
 			Vector2 direction = player.position - transform.position;
 
 			if (direction.magnitude > stoppingDistance)
