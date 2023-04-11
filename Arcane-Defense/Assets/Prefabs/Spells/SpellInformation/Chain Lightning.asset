@@ -15,4 +15,5 @@ MonoBehaviour:
   spellIcon: {fileID: -1705809061, guid: 43f2c69d3b7786c42b3fa870acf05c0a, type: 3}
   cooldown: 2
   mana: 40
+  info: Zaps multiple enemies over a limited range.
   spell: {fileID: 3304544263567714978, guid: 1ed6d107de0eec4439831b03cd80bd15, type: 3}

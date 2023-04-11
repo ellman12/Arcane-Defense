@@ -10,6 +10,8 @@ namespace Spells
 		public float cooldown;
 
 		public int mana;
+
+		public string info;
 		
 		public Spell spell;
 	}

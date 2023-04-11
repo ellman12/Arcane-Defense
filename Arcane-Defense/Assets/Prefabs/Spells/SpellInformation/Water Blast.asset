@@ -15,4 +15,5 @@ MonoBehaviour:
   spellIcon: {fileID: 2039648999, guid: 5dd8294036eb0cf47b6478380c09eff9, type: 3}
   cooldown: 0.3
   mana: 2
+  info: Basic offense spell.
   spell: {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
