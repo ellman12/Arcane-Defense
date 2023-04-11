@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1130d89c405f4884a6c5b8c34b0432ce, type: 3}
   m_Name: Chain Lightning
   m_EditorClassIdentifier: 
-  spellIcon: {fileID: 21300000, guid: 585217b914e37124597437b364e63320, type: 3}
+  spellIcon: {fileID: -1705809061, guid: 43f2c69d3b7786c42b3fa870acf05c0a, type: 3}
   cooldown: 2
   mana: 40
   spell: {fileID: 3304544263567714978, guid: 1ed6d107de0eec4439831b03cd80bd15, type: 3}
