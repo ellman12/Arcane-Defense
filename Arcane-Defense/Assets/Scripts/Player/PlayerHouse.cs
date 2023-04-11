@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Enemies;
 using InputSystem;
+using Spells;
 using UnityEngine;
 using Utilities;
 
@@ -53,6 +54,8 @@ namespace Player
 		{
 			if (col.CompareTag("Enemy"))
 				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
+			else if (col.TryGetComponent(out Spell spell) && spell.enemySpell)
+				LoseHealth(spell.contactDamage);
 		}
 
 		private void LoseHealth(int amount)
