@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using InputSystem;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UI
 {
@@ -11,7 +13,13 @@ namespace UI
 		{
 			base.Awake();
 			gameObject.SetActive(false);
-			InputManager.I.PlayerInput.SpellsMenu.Toggle.performed += _ => gameObject.SetActive(!gameObject.activeSelf);
+			InputManager.I.PlayerInput.SpellsMenu.Toggle.performed += Toggle;
+
+			void Toggle(InputAction.CallbackContext callbackContext)
+			{
+				gameObject.SetActive(!gameObject.activeSelf);
+				Time.timeScale = gameObject.activeSelf ? 0 : 1;
+			}
 		}
 	}
 }
