@@ -17,7 +17,7 @@ namespace UI
 			set
 			{
 				spellInfo = value;
-				slotIcon.sprite = spellInfo.spellIcon;
+				slotIcon.sprite = spellInfo == null ? null : spellInfo.spellIcon;
 			}
 		}
 		
@@ -29,7 +29,15 @@ namespace UI
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			throw new NotImplementedException();
+			if (SelectedSpell.I.Selected == null)
+			{
+				SelectedSpell.I.Selected = SpellInfo;
+				SpellInfo = null;
+			}
+			else if (SelectedSpell.I.Selected != null)
+			{
+				(SpellInfo, SelectedSpell.I.Selected) = (SelectedSpell.I.Selected, SpellInfo);
+			}
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
