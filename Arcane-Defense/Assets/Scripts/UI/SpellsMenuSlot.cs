@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-	public class SpellMenuSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+	public class SpellsMenuSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 	{
 		[HideInInspector] public SpellInfo spellInfo;
 
