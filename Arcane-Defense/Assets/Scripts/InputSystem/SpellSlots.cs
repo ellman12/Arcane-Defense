@@ -12,14 +12,14 @@ namespace InputSystem
 
 		private const int NUM_SLOTS = 8;
 		[SerializeField] private GameObject selectedIcon;
-		private int selectedSlot;
+		private int selectedSlot, activeSlots;
 		public int SelectedSlot
 		{
 			get => selectedSlot;
 			set
 			{
-				if (value < 1) selectedSlot = NUM_SLOTS;
-				else if (value > NUM_SLOTS) selectedSlot = 1;
+				if (value < 1) selectedSlot = activeSlots;
+				else if (value > activeSlots) selectedSlot = 1;
 				else selectedSlot = value;
 
 				selectedIcon.transform.position = spellSlots[selectedSlot].Item2.transform.position;
@@ -49,12 +49,14 @@ namespace InputSystem
 			for (int i = 1; i <= NUM_SLOTS; i++)
 			{
 				GameObject slot = GameObject.Find($"Slot {i}");
-				// spellSlots.Add(i, (i, slot.GetComponent<SpellSlot>()));
-				// slot.SetActive(i == 1);
-				spellSlots.Add(i, (1, slot.GetComponent<SpellSlot>()));
+				spellSlots.Add(i, (i, slot.GetComponent<SpellSlot>()));
+				slot.SetActive(false);
 			}
+			
+			spellSlots[1].Item2.gameObject.SetActive(true);
+			activeSlots = 1;
 
-			// uiElement.sizeDelta = new Vector2(slotsWidth, slotsHeight);
+			uiElement.sizeDelta = new Vector2(slotsWidth, slotsHeight);
 
 			SelectedSlot = 1;
 		}
@@ -67,12 +69,13 @@ namespace InputSystem
 
 		private void ExpandSlots(object sender, EventArgs eventArgs)
 		{
-			foreach (var slot in spellSlots)
+			foreach (KeyValuePair<int, (int, SpellSlot)> slot in spellSlots)
 			{
 				if (!slot.Value.Item2.gameObject.activeSelf && slot.Value.Item1 <= GameManager.I.RoundNumber)
 				{
 					slot.Value.Item2.gameObject.SetActive(true);
 					slotsWidth += widthDelta;
+					activeSlots++;
 				}
 			}
 			
