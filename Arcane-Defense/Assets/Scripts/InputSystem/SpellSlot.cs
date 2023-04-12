@@ -19,7 +19,7 @@ namespace InputSystem
 		private void OnEnable()
 		{
 			cooldownFill.value = 0;
-			slotIcon.sprite = spellInfo.spellIcon;
+			if (spellInfo != null) slotIcon.sprite = spellInfo.spellIcon;
 		}
 
 		public void UseSpell()
