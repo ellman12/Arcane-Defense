@@ -2,16 +2,29 @@
 using Spells;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UI
 {
 	public class SpellsMenuSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 	{
-		[HideInInspector] public SpellInfo spellInfo;
-
+		[SerializeField] private Image slotIcon;
+		
+		[SerializeField] private SpellInfo spellInfo;
+		public SpellInfo SpellInfo
+		{
+			get => spellInfo;
+			set
+			{
+				spellInfo = value;
+				slotIcon.sprite = spellInfo.spellIcon;
+			}
+		}
+		
 		private void Start()
 		{
-			SpellNameText.I.text.text = SpellInfoText.I.text.text = "";
+			if (spellInfo != null)
+				SpellInfo = SpellInfo;
 		}
 
 		public void OnPointerClick(PointerEventData eventData)

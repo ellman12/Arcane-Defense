@@ -16,8 +16,6 @@ namespace UI
 
 		[SerializeField] private List<int> spellRoundUnlock;
 
-		private readonly List<SpellInfo> availableSpells = new();
-
 		private new void Awake()
 		{
 			base.Awake();
@@ -25,6 +23,8 @@ namespace UI
 			InputManager.I.PlayerInput.SpellsMenu.Toggle.performed += Toggle;
 
 			GameManager.I.RoundAdvance += CheckForUnlockedSpells;
+			
+			SpellNameText.I.text.text = SpellInfoText.I.text.text = "";
 
 			if (unlockableSpells.Count != spellRoundUnlock.Count) throw new ArgumentOutOfRangeException();
 		}
@@ -39,9 +39,11 @@ namespace UI
 		{
 			for (int i = 0; i < unlockableSpells.ToArray().Length; i++)
 			{
-				if (spellRoundUnlock[i] <= GameManager.I.RoundNumber && spellSlots.Count(s => s.spellInfo != null && s.spellInfo.name == unlockableSpells[i].name) == 0)
+				if (spellRoundUnlock[i] <= GameManager.I.RoundNumber && spellSlots.Count(s => s.SpellInfo != null && s.SpellInfo.name == unlockableSpells[i].name) == 0)
 				{
-					availableSpells.Add(unlockableSpells.First());
+					int index = spellSlots.FindIndex(slot => slot.SpellInfo == null);
+					spellSlots[index].SpellInfo = unlockableSpells[i];
+					
 					unlockableSpells.RemoveAt(0);
 					spellRoundUnlock.RemoveAt(0);
 				}
