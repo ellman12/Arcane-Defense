@@ -15,4 +15,5 @@ MonoBehaviour:
   spellIcon: {fileID: 21300000, guid: 9a0c96d42d5137647ae581962296da89, type: 3}
   cooldown: 20
   mana: 40
+  info: Summons a magical turret to attack enemies.
   spell: {fileID: 2695283259629652568, guid: 3620f0c8b9d45944a978af5eee302ee6, type: 3}

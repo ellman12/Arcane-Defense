@@ -605,6 +605,45 @@
             ]
         },
         {
+            "name": "Spells Menu",
+            "id": "d52d7c82-8904-43be-8e0e-b752839a03ea",
+            "actions": [
+                {
+                    "name": "Toggle",
+                    "type": "Button",
+                    "id": "03771d00-e6f8-4751-8b21-78673723c9c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0dce16c5-666e-4d57-8278-fd83fc8e31fd",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e59d6651-5135-4754-b9c1-390f7995395d",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "TitleScreen",
             "id": "4586d676-4cbd-4e4a-827d-c227091df79d",
             "actions": [

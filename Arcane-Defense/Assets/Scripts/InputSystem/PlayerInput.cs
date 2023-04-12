@@ -627,6 +627,45 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Spells Menu"",
+            ""id"": ""d52d7c82-8904-43be-8e0e-b752839a03ea"",
+            ""actions"": [
+                {
+                    ""name"": ""Toggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""03771d00-e6f8-4751-8b21-78673723c9c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0dce16c5-666e-4d57-8278-fd83fc8e31fd"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e59d6651-5135-4754-b9c1-390f7995395d"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""TitleScreen"",
             ""id"": ""4586d676-4cbd-4e4a-827d-c227091df79d"",
             ""actions"": [
@@ -698,6 +737,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Cursor
         m_Cursor = asset.FindActionMap("Cursor", throwIfNotFound: true);
         m_Cursor_Cursor = m_Cursor.FindAction("Cursor", throwIfNotFound: true);
+        // Spells Menu
+        m_SpellsMenu = asset.FindActionMap("Spells Menu", throwIfNotFound: true);
+        m_SpellsMenu_Toggle = m_SpellsMenu.FindAction("Toggle", throwIfNotFound: true);
         // TitleScreen
         m_TitleScreen = asset.FindActionMap("TitleScreen", throwIfNotFound: true);
         m_TitleScreen_StartGame = m_TitleScreen.FindAction("StartGame", throwIfNotFound: true);
@@ -977,6 +1019,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     }
     public CursorActions @Cursor => new CursorActions(this);
 
+    // Spells Menu
+    private readonly InputActionMap m_SpellsMenu;
+    private List<ISpellsMenuActions> m_SpellsMenuActionsCallbackInterfaces = new List<ISpellsMenuActions>();
+    private readonly InputAction m_SpellsMenu_Toggle;
+    public struct SpellsMenuActions
+    {
+        private @PlayerInput m_Wrapper;
+        public SpellsMenuActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Toggle => m_Wrapper.m_SpellsMenu_Toggle;
+        public InputActionMap Get() { return m_Wrapper.m_SpellsMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SpellsMenuActions set) { return set.Get(); }
+        public void AddCallbacks(ISpellsMenuActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SpellsMenuActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SpellsMenuActionsCallbackInterfaces.Add(instance);
+            @Toggle.started += instance.OnToggle;
+            @Toggle.performed += instance.OnToggle;
+            @Toggle.canceled += instance.OnToggle;
+        }
+
+        private void UnregisterCallbacks(ISpellsMenuActions instance)
+        {
+            @Toggle.started -= instance.OnToggle;
+            @Toggle.performed -= instance.OnToggle;
+            @Toggle.canceled -= instance.OnToggle;
+        }
+
+        public void RemoveCallbacks(ISpellsMenuActions instance)
+        {
+            if (m_Wrapper.m_SpellsMenuActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISpellsMenuActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SpellsMenuActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SpellsMenuActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SpellsMenuActions @SpellsMenu => new SpellsMenuActions(this);
+
     // TitleScreen
     private readonly InputActionMap m_TitleScreen;
     private List<ITitleScreenActions> m_TitleScreenActionsCallbackInterfaces = new List<ITitleScreenActions>();
@@ -1043,6 +1131,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface ICursorActions
     {
         void OnCursor(InputAction.CallbackContext context);
+    }
+    public interface ISpellsMenuActions
+    {
+        void OnToggle(InputAction.CallbackContext context);
     }
     public interface ITitleScreenActions
     {

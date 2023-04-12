@@ -15,4 +15,5 @@ MonoBehaviour:
   spellIcon: {fileID: 21300000, guid: 669db0ae8b579b241875aaab209eeec7, type: 3}
   cooldown: 20
   mana: 5
+  info: Slowly restores your health.
   spell: {fileID: 6244468834972854479, guid: db7f5eb838f82db4186063611746026e, type: 3}
