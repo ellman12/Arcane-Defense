@@ -1,12 +1,11 @@
-﻿using System;
-using Spells;
+﻿using Spells;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI
 {
-	public class SpellsMenuSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+	public class SpellsMenuSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 	{
 		[SerializeField] private Image slotIcon;
 		
@@ -42,10 +41,17 @@ namespace UI
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			if (spellInfo == null) return;
+			if (spellInfo == null || SelectedSpell.I.Selected != null) return;
 
 			SpellNameText.I.text.text = spellInfo.name;
 			SpellInfoText.I.text.text = spellInfo.info;
+		}
+
+		public void OnPointerExit(PointerEventData eventData)
+		{
+			if (SelectedSpell.I.Selected != null) return;
+			
+			SpellNameText.I.text.text = SpellInfoText.I.text.text = "";
 		}
 	}
 }

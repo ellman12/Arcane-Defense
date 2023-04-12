@@ -24,6 +24,8 @@ namespace UI
 				{
 					gameObject.SetActive(true);
 					spellIcon.sprite = selected.spellIcon;
+					SpellNameText.I.text.text = selected.name;
+					SpellInfoText.I.text.text = selected.info;
 				}
 			}
 		}
