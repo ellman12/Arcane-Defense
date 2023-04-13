@@ -5,6 +5,7 @@ namespace Player
 {
 	public class StatBar : MonoBehaviour
 	{
+		[SerializeField] private float barWidth;
 		[SerializeField] private RectTransform rectTransform;
 		[SerializeField] private Slider slider;
 		[SerializeField] private Gradient gradient;
@@ -14,7 +15,7 @@ namespace Player
 		{
 			slider.maxValue = maxHealth;
 			slider.value = maxHealth;
-			rectTransform.sizeDelta = new Vector2(26, maxHealth);
+			rectTransform.sizeDelta = new Vector2(barWidth, maxHealth);
 			fill.color = gradient.Evaluate(1);
 		}
 

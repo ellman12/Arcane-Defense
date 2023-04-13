@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Enemies;
 using InputSystem;
 using Spells;
@@ -9,12 +9,12 @@ namespace Player
 {
 	public class PlayerHouse : Singleton<PlayerHouse>
 	{
-		[SerializeField] private float invincibilityDuration, invincibilityDeltaTime;
+		[SerializeField] private float invincibilityDuration;
 		[SerializeField] private StatBar healthBar;
-		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private GameObject gameOverScreen;
+		[SerializeField] private int maxHealth;
 
-		[SerializeField, ReadOnly] private int health, maxHealth;
+		[SerializeField, ReadOnly] private int health;
 		[SerializeField, ReadOnly] private bool invincible;
 
 		private int Health
@@ -46,15 +46,15 @@ namespace Player
 
 		private new void Awake()
 		{
-			MaxHealth = Health = 100;
 			base.Awake();
+			Health = MaxHealth;
 		}
 
-		private void OnTriggerStay2D(Collider2D col)
+		private void OnCollisionStay2D(Collision2D col)
 		{
-			if (col.CompareTag("Enemy"))
-				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
-			else if (col.TryGetComponent(out Spell spell) && spell.enemySpell)
+			if (col.gameObject.CompareTag("Enemy"))
+				LoseHealth(col.gameObject.GetComponent<Enemy>().ContactDamage);
+			else if (col.gameObject.TryGetComponent(out Spell spell) && spell.enemySpell)
 				LoseHealth(spell.contactDamage);
 		}
 
@@ -70,15 +70,8 @@ namespace Player
 		private IEnumerator BecomeTemporarilyInvincible()
 		{
 			invincible = true;
-
-			for (float i = 0; i < invincibilityDuration; i += invincibilityDeltaTime)
-			{
-				spriteRenderer.enabled = !spriteRenderer.enabled;
-				yield return new WaitForSeconds(invincibilityDeltaTime);
-			}
-
+			yield return new WaitForSeconds(invincibilityDuration);
 			invincible = false;
-			spriteRenderer.enabled = true;
 		}
 	}
 }

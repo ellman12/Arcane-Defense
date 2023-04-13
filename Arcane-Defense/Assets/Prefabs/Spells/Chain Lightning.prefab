@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1051736841059118319
 LineRenderer:
@@ -88,8 +88,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.043167114
-        value: 0.07563019
+        time: 0
+        value: 0.3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -200,7 +200,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.06
+  m_EdgeRadius: 0.2
   m_Points:
   - {x: -0.5, y: 0}
   - {x: 1.5, y: 0}
@@ -239,11 +239,11 @@ MonoBehaviour:
   knockbackForce: 0
   knockbackDuration: 0
   lineRenderer: {fileID: 1051736841059118319}
-  targetSearchRadius: 4
-  xDeltaMin: -0.15
-  xDeltaMax: 0.15
-  yDeltaMin: -0.15
-  yDeltaMax: 0.15
+  targetSearchRadius: 10
+  xDeltaMin: -0.5
+  xDeltaMax: 0.5
+  yDeltaMin: -0.5
+  yDeltaMax: 0.5
   posCount: 6
   layerMask:
     serializedVersion: 2
