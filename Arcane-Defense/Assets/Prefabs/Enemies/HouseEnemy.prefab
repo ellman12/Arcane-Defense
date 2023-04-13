@@ -180,8 +180,8 @@ MonoBehaviour:
   invincible: 0
   health: 10
   houseContactDamage: 40
-  moveSpeed: 0.9
+  moveSpeed: 10
   playerStopDist: 0
-  houseStopDist: 0.5
+  houseStopDist: 2.5
   playerChaseDistance: 0
-  houseChaseDistance: 10
+  houseChaseDistance: 50

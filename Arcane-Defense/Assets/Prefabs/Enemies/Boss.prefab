@@ -179,12 +179,12 @@ MonoBehaviour:
   contactDamage: 10
   invincible: 0
   health: 50
-  moveSpeed: 0.2
-  playerStopDist: 0.15
-  houseStopDist: 0.5
-  playerChaseDistance: 2
-  houseChaseDistance: 20
-  attackCooldown: 100
+  moveSpeed: 3
+  playerStopDist: 3
+  houseStopDist: 3
+  playerChaseDistance: 10
+  houseChaseDistance: 50
+  attackCooldown: 1
   defendCooldown: 30
   attackRange: 6
   spells:
