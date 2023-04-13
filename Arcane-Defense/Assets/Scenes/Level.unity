@@ -8503,6 +8503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c24f527124c30986294b116cbe9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barWidth: 26
   rectTransform: {fileID: 765439507}
   slider: {fileID: 765439510}
   gradient:
@@ -9944,8 +9945,8 @@ MonoBehaviour:
   invincibilityDuration: 2
   healthBar: {fileID: 2047427545}
   gameOverScreen: {fileID: 1356675767}
+  maxHealth: 400
   health: 0
-  maxHealth: 0
   invincible: 0
 --- !u!1 &1303722094
 GameObject:
@@ -70368,6 +70369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c24f527124c30986294b116cbe9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barWidth: 26
   rectTransform: {fileID: 1951026834}
   slider: {fileID: 1951026836}
   gradient:
@@ -71438,8 +71440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59.3}
-  m_SizeDelta: {x: 26, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047427545
 MonoBehaviour:
@@ -71453,6 +71455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c24f527124c30986294b116cbe9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barWidth: 200
   rectTransform: {fileID: 2047427544}
   slider: {fileID: 2047427546}
   gradient:

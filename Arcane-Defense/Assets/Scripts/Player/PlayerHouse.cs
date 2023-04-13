@@ -12,8 +12,9 @@ namespace Player
 		[SerializeField] private float invincibilityDuration;
 		[SerializeField] private StatBar healthBar;
 		[SerializeField] private GameObject gameOverScreen;
+		[SerializeField] private int maxHealth;
 
-		[SerializeField, ReadOnly] private int health, maxHealth;
+		[SerializeField, ReadOnly] private int health;
 		[SerializeField, ReadOnly] private bool invincible;
 
 		private int Health
@@ -45,8 +46,8 @@ namespace Player
 
 		private new void Awake()
 		{
-			MaxHealth = Health = 100;
 			base.Awake();
+			Health = MaxHealth;
 		}
 
 		private void OnTriggerStay2D(Collider2D col)
