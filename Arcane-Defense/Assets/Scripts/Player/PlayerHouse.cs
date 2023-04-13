@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Enemies;
 using InputSystem;
 using Spells;
@@ -50,11 +50,11 @@ namespace Player
 			Health = MaxHealth;
 		}
 
-		private void OnTriggerStay2D(Collider2D col)
+		private void OnCollisionStay2D(Collision2D col)
 		{
-			if (col.CompareTag("Enemy"))
-				LoseHealth(col.GetComponent<Enemy>().ContactDamage);
-			else if (col.TryGetComponent(out Spell spell) && spell.enemySpell)
+			if (col.gameObject.CompareTag("Enemy"))
+				LoseHealth(col.gameObject.GetComponent<Enemy>().ContactDamage);
+			else if (col.gameObject.TryGetComponent(out Spell spell) && spell.enemySpell)
 				LoseHealth(spell.contactDamage);
 		}
 
