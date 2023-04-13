@@ -9,9 +9,8 @@ namespace Player
 {
 	public class PlayerHouse : Singleton<PlayerHouse>
 	{
-		[SerializeField] private float invincibilityDuration, invincibilityDeltaTime;
+		[SerializeField] private float invincibilityDuration;
 		[SerializeField] private StatBar healthBar;
-		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private GameObject gameOverScreen;
 
 		[SerializeField, ReadOnly] private int health, maxHealth;
@@ -70,15 +69,8 @@ namespace Player
 		private IEnumerator BecomeTemporarilyInvincible()
 		{
 			invincible = true;
-
-			for (float i = 0; i < invincibilityDuration; i += invincibilityDeltaTime)
-			{
-				spriteRenderer.enabled = !spriteRenderer.enabled;
-				yield return new WaitForSeconds(invincibilityDeltaTime);
-			}
-
+			yield return new WaitForSeconds(invincibilityDuration);
 			invincible = false;
-			spriteRenderer.enabled = true;
 		}
 	}
 }
