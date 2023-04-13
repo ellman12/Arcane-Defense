@@ -5,7 +5,7 @@ namespace Player
 {
 	public class MainCamera : Singleton<MainCamera>
 	{
-		[SerializeField] private float smoothTime = 0.3f;
+		[SerializeField] private float distance, smoothTime = 0.3f;
 		[SerializeField] private Vector2 minBounds;
 		[SerializeField] private Vector2 maxBounds;
 
@@ -25,7 +25,7 @@ namespace Player
 			Vector3 targetPosition = new Vector3(
 				Mathf.Clamp(target.position.x, minBounds.x, maxBounds.x),
 				Mathf.Clamp(target.position.y, minBounds.y, maxBounds.y),
-				-2.5f);
+				distance);
 
 			transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _, smoothTime);
 		}
