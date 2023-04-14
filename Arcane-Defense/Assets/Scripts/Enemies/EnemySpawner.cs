@@ -28,7 +28,7 @@ namespace Enemies
 			if (GameManager.I.RemainingAmountToSpawn <= 0) return;
 
 			int index = Random.Range(0, enemies.Count);
-			var newEnemy = PrefabUtility.InstantiatePrefab(enemies[index]) as Enemy;
+			Enemy newEnemy = Instantiate(enemies[index]);
 			newEnemy!.transform.position = GetNewEnemyStartPos();
 			GameManager.I.RemainingAmountToSpawn--;
 		}
