@@ -6,8 +6,7 @@ namespace Spells
 {
 	public class BombSpell : Spell
 	{
-		[SerializeField] private float fuseTime;
-		[SerializeField] private Vector2 explosionSize;
+		[SerializeField] private float fuseTime, explosionTime;
 		[SerializeField] private new BoxCollider2D collider;
 
 		private void Start()
@@ -20,9 +19,7 @@ namespace Spells
 		{
 			yield return new WaitForSeconds(fuseTime);
 			collider.enabled = true;
-			collider.size = explosionSize;
-			yield return null;
-			yield return null;
+			yield return new WaitForSeconds(explosionTime);
 			Destroy(gameObject);
 		}
 	}
