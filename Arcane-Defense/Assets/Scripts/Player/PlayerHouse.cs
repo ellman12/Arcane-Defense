@@ -20,7 +20,7 @@ namespace Player
 		public int Health
 		{
 			get => health;
-			private set
+			set
 			{
 				health = value;
 				healthBar.SetValue(health);
@@ -37,7 +37,7 @@ namespace Player
 		public int MaxHealth
 		{
 			get => maxHealth;
-			private set
+			set
 			{
 				maxHealth = value;
 				healthBar.SetMaxValue(maxHealth);
