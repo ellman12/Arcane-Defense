@@ -8790,7 +8790,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 632649308815a0e488d65efa28259243, type: 2}
   - {fileID: 11400000, guid: 97fb8ecf123017d49992af987fcaae7c, type: 2}
   - {fileID: 11400000, guid: a77076dc6253d9940be0db20e4dfbb1d, type: 2}
-  spellRoundUnlock: 02000000030000000400000005000000060000000700000008000000
+  - {fileID: 11400000, guid: 778d33c4a13a0df41b34a791e6436576, type: 2}
+  spellRoundUnlock: 0200000003000000040000000500000006000000070000000800000009000000
 --- !u!1 &1020185861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10452,7 +10453,7 @@ PrefabInstance:
     - target: {fileID: 6554219594474894408, guid: a49b04aa51cfd7e479c718553a20c914, type: 3}
       propertyPath: spellInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 778d33c4a13a0df41b34a791e6436576, type: 2}
+      objectReference: {fileID: 11400000, guid: 718a5610af56354489d2737a941ad3d3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
