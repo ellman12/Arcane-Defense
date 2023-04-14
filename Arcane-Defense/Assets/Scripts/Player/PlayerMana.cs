@@ -25,10 +25,10 @@ namespace Player
 			}
 		}
 
-		private int MaxMana
+		public int MaxMana
 		{
 			get => maxMana;
-			set
+			private set
 			{
 				maxMana = value;
 				manaBar.SetMaxValue(maxMana);
