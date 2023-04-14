@@ -48,6 +48,7 @@ namespace Player
 		{
 			base.Awake();
 			Health = MaxHealth;
+			healthBar.SetMaxValue(MaxHealth);
 		}
 
 		private void OnCollisionStay2D(Collision2D col)
