@@ -7,6 +7,8 @@ namespace Enemies
 {
 	public abstract class Enemy : MonoBehaviour
 	{
+		public float playerKnockbackForce;
+		
 		[HideInInspector] public bool canMove = true, targeted;
 		private bool alive = true;
 

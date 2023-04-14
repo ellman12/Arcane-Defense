@@ -245,6 +245,9 @@ MonoBehaviour:
   invincibilityDuration: 2
   invincibilityDeltaTime: 0.1
   healthBar: {fileID: 0}
+  rigidbody: {fileID: 4837754048323630163}
+  knockbackResistance: 0
+  knockbackDuration: 0.2
   health: 0
   maxHealth: 0
   invincible: 0

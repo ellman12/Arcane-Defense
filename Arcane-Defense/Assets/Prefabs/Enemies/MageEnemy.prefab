@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6208c942934b43f0b268c3c34504fc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerKnockbackForce: 5
   canMove: 1
   targeted: 0
   rigidbody: {fileID: 4595157267456833267}
