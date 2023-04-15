@@ -28,7 +28,7 @@ namespace Player
 		public int MaxMana
 		{
 			get => maxMana;
-			private set
+			set
 			{
 				maxMana = value;
 				manaBar.SetMaxValue(maxMana);

@@ -30,7 +30,7 @@ namespace Player
 			}
 		}
 
-		private int MaxHealth
+		public int MaxHealth
 		{
 			get => maxHealth;
 			set
