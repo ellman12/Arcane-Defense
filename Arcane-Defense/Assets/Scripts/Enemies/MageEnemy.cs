@@ -40,6 +40,7 @@ namespace Enemies
 				{
 					int index = Random.Range(0, spells.Count);
 					Spell newSpell = Instantiate(spells[index], transform.position, Quaternion.identity);
+					newSpell.contactDamage *= 3;
 					newSpell.Initialize(true, transform, PlayerMovement.I.transform);
 					yield return new WaitForSeconds(attackCooldown);
 				}
