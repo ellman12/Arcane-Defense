@@ -32,6 +32,8 @@ namespace Spells
 			Destroy(gameObject, duration);
 		}
 
+		private void Update() => transform.position = start.transform.position;
+
 		private void OnTriggerEnter2D(Collider2D col)
 		{
 			if (col.TryGetComponent(out Spell other) && enemySpell != other.enemySpell)
