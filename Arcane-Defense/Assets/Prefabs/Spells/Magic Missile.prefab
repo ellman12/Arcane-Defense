@@ -167,6 +167,7 @@ MonoBehaviour:
   contactDamage: 20
   knockbackForce: 4
   knockbackDuration: 0.2
+  spellUse: {fileID: 11400000, guid: a2e19dd075d2d084e8bfb5e2cc2331f3, type: 2}
   targetingRange: 10
   speed: 20
   layerMask:

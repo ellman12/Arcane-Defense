@@ -6,6 +6,6 @@ namespace Audio
 	public class Audio : ScriptableObject
 	{
 		public AudioClip audioClip;
-		[Range(0, 1)] public float volumeOffset;
+		public float volumeOffset;
 	}
 }
