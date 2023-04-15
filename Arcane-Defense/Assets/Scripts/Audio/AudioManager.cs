@@ -7,7 +7,7 @@ namespace Audio
 		[SerializeField] private AudioSource audioSource;
 		[SerializeField] private float masterVolume;
 
-		public void PlaySound(Audio a)
+		public void PlayAudio(Audio a)
 		{
 			audioSource.PlayOneShot(a.audioClip, masterVolume + a.volumeOffset);
 		}

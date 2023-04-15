@@ -27,7 +27,7 @@ namespace Spells
 			if (target == null)
 				target = t;
 			
-			AudioManager.I.PlaySound(spellUse);
+			AudioManager.I.PlayAudio(spellUse);
 		}
 	}
 }
