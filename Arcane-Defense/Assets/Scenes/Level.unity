@@ -69967,7 +69967,7 @@ MonoBehaviour:
   powerUps:
   - {fileID: 2509707001193966777, guid: 8b4a741de4419e6408a676dbeea724f7, type: 3}
   - {fileID: 7146864895497845341, guid: 65aef7d5782a830418cd8d008cc61fe0, type: 3}
-  - {fileID: 7146864895497845341, guid: 2a6e022dba8ae1048ac11f204f41d230, type: 3}
+  - {fileID: 5536278566579398839, guid: 2a6e022dba8ae1048ac11f204f41d230, type: 3}
 --- !u!114 &1801544605 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6554219594474894408, guid: a49b04aa51cfd7e479c718553a20c914, type: 3}
