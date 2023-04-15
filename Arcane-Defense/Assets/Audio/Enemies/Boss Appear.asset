@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Boss Appear
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 506f2811905d97e449dc5155148295a6, type: 3}
-  volumeOffset: 0
+  volumeOffset: -0.8

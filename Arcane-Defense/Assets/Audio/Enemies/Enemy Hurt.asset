@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Enemy Hurt
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: dd5f7bc9b69c8784397609cb8bfb7f39, type: 3}
-  volumeOffset: 0
+  volumeOffset: -0.5
