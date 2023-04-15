@@ -188,6 +188,7 @@ MonoBehaviour:
   contactDamage: 4
   knockbackForce: 0
   knockbackDuration: 0
+  spellUse: {fileID: 11400000, guid: 567d9cb19e3e1824d945928c12d4b6a0, type: 2}
   targetingRange: 5
   shotCooldown: 1
   enemyInRangeCheckCooldown: 0.2

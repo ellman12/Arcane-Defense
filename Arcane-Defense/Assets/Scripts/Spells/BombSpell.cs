@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using InputSystem;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Spells
 	{
 		[SerializeField] private float fuseTime, explosionTime;
 		[SerializeField] private new BoxCollider2D collider;
+		[SerializeField] private Audio.Audio explosion;
 
 		private void Start()
 		{
@@ -19,6 +21,7 @@ namespace Spells
 		{
 			yield return new WaitForSeconds(fuseTime);
 			collider.enabled = true;
+			AudioManager.I.PlayAudio(explosion);
 			yield return new WaitForSeconds(explosionTime);
 			Destroy(gameObject);
 		}

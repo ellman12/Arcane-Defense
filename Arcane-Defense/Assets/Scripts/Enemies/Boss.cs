@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using InputSystem;
 using Player;
 using Spells;
@@ -11,6 +12,7 @@ namespace Enemies
 	{
 		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, defendCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;
+		[SerializeField] private Audio.Audio appear;
 
 		private Transform player, house;
 		private bool attackingHouse;
@@ -19,6 +21,8 @@ namespace Enemies
 		{
 			player = PlayerMovement.I.transform;
 			house = PlayerHouse.I.transform;
+			
+			AudioManager.I.PlayAudio(appear);
 			
 			StartCoroutine(Attack());
 		}

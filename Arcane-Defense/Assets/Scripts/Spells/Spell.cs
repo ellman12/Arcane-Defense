@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 
 namespace Spells
 {
@@ -14,6 +15,8 @@ namespace Spells
 
 		public float knockbackForce, knockbackDuration;
 
+		public Audio.Audio spellUse;
+		
 		public void Initialize(bool enemy, Transform s, Transform t)
 		{
 			enemySpell = enemy;
@@ -23,6 +26,8 @@ namespace Spells
 			
 			if (target == null)
 				target = t;
+			
+			AudioManager.I.PlayAudio(spellUse);
 		}
 	}
 }

@@ -178,6 +178,7 @@ MonoBehaviour:
   knockbackResistance: 20
   lightningInvincibilityTime: 0.1
   contactDamage: 10
+  hurt: {fileID: 11400000, guid: 4e9d4523a65715b4c8d902f17f1f91d6, type: 2}
   invincible: 0
   health: 50
   moveSpeed: 3
@@ -190,3 +191,4 @@ MonoBehaviour:
   attackRange: 6
   spells:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
+  appear: {fileID: 11400000, guid: 8470d261aa5ad1c4db08ef8344f3a260, type: 2}

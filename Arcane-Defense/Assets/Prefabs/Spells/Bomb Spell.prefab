@@ -177,6 +177,8 @@ MonoBehaviour:
   contactDamage: 8
   knockbackForce: 50
   knockbackDuration: 0.2
-  fuseTime: 1
+  spellUse: {fileID: 11400000, guid: dfe65bb6cfdad544c92b2b0fabe39454, type: 2}
+  fuseTime: 3
   explosionTime: 0.5
   collider: {fileID: 6897597930302108727}
+  explosion: {fileID: 11400000, guid: dedf339ea4c3bbb478b90fee333e8d8b, type: 2}

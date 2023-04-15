@@ -178,6 +178,7 @@ MonoBehaviour:
   knockbackResistance: 0
   lightningInvincibilityTime: 0.1
   contactDamage: 6
+  hurt: {fileID: 11400000, guid: 5cd6a6006243d9549846e60aed43cba3, type: 2}
   invincible: 0
   health: 10
   houseContactDamage: 40

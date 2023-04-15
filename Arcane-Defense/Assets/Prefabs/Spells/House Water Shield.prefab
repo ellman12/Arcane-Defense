@@ -212,6 +212,7 @@ MonoBehaviour:
   contactDamage: 0
   knockbackForce: 0
   knockbackDuration: 0
+  spellUse: {fileID: 11400000, guid: d29d6a2496d6c5d45bfc7ccb97742eb1, type: 2}
   parentName: Player House
   duration: 10
   health: 5

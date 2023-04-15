@@ -45,7 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpell: 0
+  start: {fileID: 0}
+  target: {fileID: 0}
   contactDamage: 0
+  knockbackForce: 0
+  knockbackDuration: 0
+  spellUse: {fileID: 11400000, guid: 218a6491cac64e84aa698dc308bb49d0, type: 2}
   healthDelta: 5
   regenRepeatRate: 1
   duration: 40
