@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using Spells;
 using UnityEngine;
 using Utilities;
@@ -15,6 +16,7 @@ namespace Enemies
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance, lightningInvincibilityTime;
 		[SerializeField] private int contactDamage;
+		[SerializeField] private Audio.Audio hurt;
 		
 		[SerializeField, ReadOnly] private bool invincible;
 
@@ -70,6 +72,7 @@ namespace Enemies
 			if (invincible) return;
 
 			Health -= amount;
+			AudioManager.I.PlayAudio(hurt);
 
 			StartCoroutine(BecomeTemporarilyInvincible());
 		}
