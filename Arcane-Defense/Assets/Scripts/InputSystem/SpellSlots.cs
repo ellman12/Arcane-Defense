@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CBC = UnityEngine.InputSystem.InputAction.CallbackContext;
@@ -29,7 +30,7 @@ namespace InputSystem
 		///Tuple stores the round number that slot is unlocked.
 		private readonly Dictionary<int, ValueTuple<int, SpellSlot>> spellSlots = new(NUM_SLOTS);
 
-		private void Start()
+		private IEnumerator Start()
 		{
 			InputManager.I.PlayerInput.Spells.Slot1.performed += _ => UseSlot(1);
 			InputManager.I.PlayerInput.Spells.Slot2.performed += _ => UseSlot(2);
@@ -58,6 +59,7 @@ namespace InputSystem
 
 			uiElement.sizeDelta = new Vector2(slotsWidth, slotsHeight);
 
+			yield return null;
 			SelectedSlot = 1;
 		}
 
