@@ -10,7 +10,7 @@ namespace Enemies
 {
 	public class Boss : Enemy
 	{
-		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, defendCooldown, attackRange;
+		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;
 		[SerializeField] private Audio.Audio appear;
 
