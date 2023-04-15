@@ -199,4 +199,5 @@ MonoBehaviour:
   contactDamage: 4
   knockbackForce: 2
   knockbackDuration: 0.1
+  spellUse: {fileID: 11400000, guid: d29d6a2496d6c5d45bfc7ccb97742eb1, type: 2}
   speed: 10
