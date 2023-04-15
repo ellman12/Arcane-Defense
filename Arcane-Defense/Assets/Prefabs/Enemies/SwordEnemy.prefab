@@ -177,11 +177,11 @@ MonoBehaviour:
   rigidbody: {fileID: 2444368454796453355}
   knockbackResistance: 0
   lightningInvincibilityTime: 0.1
-  contactDamage: 10
+  contactDamage: 20
   hurt: {fileID: 11400000, guid: 5cd6a6006243d9549846e60aed43cba3, type: 2}
   invincible: 0
   health: 10
-  moveSpeed: 5
+  moveSpeed: 3
   playerStopDist: 1
   houseStopDist: 2
   playerChaseDistance: 10
