@@ -17,7 +17,7 @@ namespace Player
 		[SerializeField, ReadOnly] private int health;
 		[SerializeField, ReadOnly] private bool invincible;
 
-		private int Health
+		public int Health
 		{
 			get => health;
 			set
@@ -34,7 +34,7 @@ namespace Player
 			}
 		}
 
-		private int MaxHealth
+		public int MaxHealth
 		{
 			get => maxHealth;
 			set
@@ -48,6 +48,7 @@ namespace Player
 		{
 			base.Awake();
 			Health = MaxHealth;
+			healthBar.SetMaxValue(MaxHealth);
 		}
 
 		private void OnCollisionStay2D(Collision2D col)
@@ -73,5 +74,7 @@ namespace Player
 			yield return new WaitForSeconds(invincibilityDuration);
 			invincible = false;
 		}
+
+		public void RestoreHealth() => Health = MaxHealth;
 	}
 }

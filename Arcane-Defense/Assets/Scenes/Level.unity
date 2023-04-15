@@ -9947,7 +9947,7 @@ MonoBehaviour:
   invincibilityDuration: 2
   healthBar: {fileID: 2047427545}
   gameOverScreen: {fileID: 1356675767}
-  maxHealth: 400
+  maxHealth: 100
   health: 0
   invincible: 0
 --- !u!1 &1303722094
@@ -69896,6 +69896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1754150117}
   - component: {fileID: 1754150116}
+  - component: {fileID: 1754150118}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -69950,6 +69951,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754150118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754150115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90195ba8de54d008702577e6a7dc43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOffset: {x: -0.5, y: -4, z: 0}
+  powerUps:
+  - {fileID: 2509707001193966777, guid: 8b4a741de4419e6408a676dbeea724f7, type: 3}
+  - {fileID: 7146864895497845341, guid: 65aef7d5782a830418cd8d008cc61fe0, type: 3}
+  - {fileID: 7146864895497845341, guid: 2a6e022dba8ae1048ac11f204f41d230, type: 3}
 --- !u!114 &1801544605 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6554219594474894408, guid: a49b04aa51cfd7e479c718553a20c914, type: 3}
@@ -71443,7 +71461,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 400}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047427545
 MonoBehaviour:
