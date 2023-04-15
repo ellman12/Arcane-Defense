@@ -238,6 +238,7 @@ MonoBehaviour:
   contactDamage: 1
   knockbackForce: 0
   knockbackDuration: 0
+  spellUse: {fileID: 11400000, guid: cb2d0d5ec4005084dae824c6f843ed9c, type: 2}
   lineRenderer: {fileID: 1051736841059118319}
   targetSearchRadius: 10
   xDeltaMin: -0.5
