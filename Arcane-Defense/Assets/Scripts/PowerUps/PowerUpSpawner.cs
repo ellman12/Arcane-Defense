@@ -15,7 +15,7 @@ namespace PowerUps
 
 		private void SpawnPowerUp(object sender, EventArgs eventArgs)
 		{
-			Instantiate(powerUps[Random.Range(0, powerUps.Count - 1)], PlayerHouse.I.transform.position + spawnOffset, Quaternion.identity);
+			Instantiate(powerUps[Random.Range(0, powerUps.Count)], PlayerHouse.I.transform.position + spawnOffset, Quaternion.identity);
 		}
 	}
 }
