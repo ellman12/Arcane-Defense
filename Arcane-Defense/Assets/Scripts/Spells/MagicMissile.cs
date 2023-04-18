@@ -12,8 +12,9 @@ namespace Spells
 
 		private void Start()
 		{
-			target = GetClosestTarget();
-			StartCoroutine(target == null ? MoveForward() : MoveTowardsTarget());
+			target = GetClosestTarget(transform.position);
+			if (target == null) GetClosestTarget(PlayerMovement.I.transform.position);
+				StartCoroutine(target == null ? MoveForward() : MoveTowardsTarget());
 			Destroy(gameObject, 30);
 		}
 
@@ -28,11 +29,19 @@ namespace Spells
 			//ReSharper disable once IteratorNeverReturns
 		}
 
+		//ReSharper disable once FunctionRecursiveOnAllPaths
 		private IEnumerator MoveTowardsTarget()
 		{
 			while (true)
 			{
 				RotateToPoint();
+
+				if (target == null)
+				{
+					StopCoroutine(MoveTowardsTarget());
+					StartCoroutine(MoveForward());
+					yield break;
+				}
 				
 				Vector3 targetDirection = target.position - transform.position;
 				transform.position += targetDirection.normalized * speed * Time.deltaTime;
@@ -42,17 +51,17 @@ namespace Spells
 			//ReSharper disable once IteratorNeverReturns
 		}
 
-		private Transform GetClosestTarget()
+		private Transform GetClosestTarget(Vector3 startPoint)
 		{
 			//ReSharper disable once Unity.PreferNonAllocApi
-			Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, targetingRange, layerMask);
+			Collider2D[] enemies = Physics2D.OverlapCircleAll(startPoint, targetingRange, layerMask);
 			if (enemies == null) return null;
 
 			Transform closestTarget = null;
 			float closestDistance = Mathf.Infinity;
 			foreach (Collider2D enemy in enemies)
 			{
-				float distanceToTarget = Vector2.Distance(transform.position, enemy.transform.position);
+				float distanceToTarget = Vector2.Distance(startPoint, enemy.transform.position);
 				if (distanceToTarget < closestDistance)
 				{
 					closestDistance = distanceToTarget;
@@ -65,7 +74,7 @@ namespace Spells
 
 		private void RotateToPoint()
 		{
-			startPos = transform.position;
+			startPos = PlayerMovement.I.transform.position;
 			targetPos = target == null ? InputManager.I.CursorPos : target.position;
 
 			targetPos.x -= startPos.x;
