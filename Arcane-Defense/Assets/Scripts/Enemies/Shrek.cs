@@ -14,12 +14,17 @@ namespace Enemies
 		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;
 		[SerializeField] private Audio.Audio appear;
-
+		[SerializeField] private SpriteRenderer spriteRenderer;
+		[SerializeField] private float redColorDelta;
+		
 		private Transform player, house;
 		private bool attackingHouse;
+
+		public static Color color = Color.white;
 		
 		private void Start()
 		{
+			spriteRenderer.color = color;
 			player = PlayerMovement.I.transform;
 			house = PlayerHouse.I.transform;
 			
@@ -67,6 +72,8 @@ namespace Enemies
 		{
 			Stats.I.shrekKills++;
 			Stats.I.UpdateStats();
+			color.g -= redColorDelta;
+			color.b -= redColorDelta;
 		}
 	}
 }

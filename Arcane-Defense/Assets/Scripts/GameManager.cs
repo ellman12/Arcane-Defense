@@ -6,6 +6,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utilities;
 using Random = UnityEngine.Random;
 
@@ -40,7 +41,7 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private TextMeshProUGUI roundText, secondsRemainingText;
 
-	[SerializeField] private GameObject bossRoundIcon;
+	[SerializeField] private Image bossRoundIcon;
 
 	[SerializeField] private Shrek shrek;
 
@@ -114,10 +115,11 @@ public class GameManager : Singleton<GameManager>
 			Instantiate(shrek, bossSpawnPos.position, Quaternion.identity);
 			oddsOfBossRound += oddsOfBossRoundDelta;
 			EnemiesAlive = ++enemiesThisRound;
-			bossRoundIcon.SetActive(true);
+			bossRoundIcon.enabled = true;
+			bossRoundIcon.color = Shrek.color;
 		}
 		else
-			bossRoundIcon.SetActive(false);
+			bossRoundIcon.enabled = false;
 	}
 	
 	public void RestartGame()

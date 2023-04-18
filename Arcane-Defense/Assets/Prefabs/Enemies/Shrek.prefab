@@ -191,3 +191,5 @@ MonoBehaviour:
   spells:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}
   appear: {fileID: 11400000, guid: 8470d261aa5ad1c4db08ef8344f3a260, type: 2}
+  spriteRenderer: {fileID: 2932428630329453405}
+  redColorDelta: 0.09
