@@ -1,5 +1,6 @@
 ﻿using InputSystem;
 using Player;
+using UI;
 using UnityEngine;
 
 namespace Enemies
@@ -33,6 +34,12 @@ namespace Enemies
 				else
 					transform.Translate(houseDirection.normalized * (moveSpeed * Time.deltaTime));
 			}
+		}
+		
+		private void OnDestroy()
+		{
+			Stats.I.houseEnemyKills++;
+			Stats.I.UpdateStats();
 		}
 	}
 }

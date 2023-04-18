@@ -4,6 +4,7 @@ using Audio;
 using InputSystem;
 using Player;
 using Spells;
+using UI;
 using UnityEngine;
 
 namespace Enemies
@@ -60,6 +61,12 @@ namespace Enemies
 				}
 				yield return null;
 			}
+		}
+		
+		private void OnDestroy()
+		{
+			Stats.I.shrekKills++;
+			Stats.I.UpdateStats();
 		}
 	}
 }

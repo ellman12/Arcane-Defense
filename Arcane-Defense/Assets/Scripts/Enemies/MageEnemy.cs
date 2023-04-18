@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using InputSystem;
 using Spells;
+using UI;
 using UnityEngine;
 
 namespace Enemies
@@ -46,6 +47,12 @@ namespace Enemies
 				}
 				yield return new WaitForSeconds(playerInRangeCheckCooldown);
 			}
+		}
+		
+		private void OnDestroy()
+		{
+			Stats.I.mageEnemyKills++;
+			Stats.I.UpdateStats();
 		}
 	}
 }
