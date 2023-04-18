@@ -7819,8 +7819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: -25
   smoothTime: 0.3
-  minBounds: {x: -22, y: -29}
-  maxBounds: {x: 22, y: 29}
+  minBounds: {x: -12.4, y: -23.5}
+  maxBounds: {x: 12.4, y: 23.5}
   camera: {fileID: 0}
 --- !u!1 &520769211
 GameObject:
