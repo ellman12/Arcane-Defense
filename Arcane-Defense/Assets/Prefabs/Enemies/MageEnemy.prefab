@@ -184,6 +184,7 @@ MonoBehaviour:
   moveSpeed: 3
   stoppingDistance: 1
   attackCooldown: 2
+  playerInRangeCheckCooldown: 0.5
   attackRange: 10
   spells:
   - {fileID: 511134601827655427, guid: 7dbf89a78afb1cf4c9cf9d1e97836565, type: 3}

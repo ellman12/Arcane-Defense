@@ -8,7 +8,7 @@ namespace Enemies
 {
 	public class MageEnemy : Enemy
 	{
-		[SerializeField] private float moveSpeed, stoppingDistance, attackCooldown, attackRange;
+		[SerializeField] private float moveSpeed, stoppingDistance, attackCooldown, playerInRangeCheckCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;
 
 		private Transform player, playerHouse;
@@ -44,7 +44,7 @@ namespace Enemies
 					newSpell.Initialize(true, transform, PlayerMovement.I.transform);
 					yield return new WaitForSeconds(attackCooldown);
 				}
-				yield return null;
+				yield return new WaitForSeconds(playerInRangeCheckCooldown);
 			}
 		}
 	}
