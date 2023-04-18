@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3897173862345412852}
   - component: {fileID: 5736950426583918929}
   m_Layer: 10
-  m_Name: Boss
+  m_Name: Shrek
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

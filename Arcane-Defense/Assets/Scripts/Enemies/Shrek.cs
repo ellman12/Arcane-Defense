@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Enemies
 {
-	public class Boss : Enemy
+	public class Shrek : Enemy
 	{
 		[SerializeField] private float moveSpeed, playerStopDist, houseStopDist, playerChaseDistance, houseChaseDistance, attackCooldown, attackRange;
 		[SerializeField] private List<Spell> spells;

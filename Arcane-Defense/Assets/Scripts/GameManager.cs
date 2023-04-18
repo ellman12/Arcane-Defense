@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private GameObject bossRoundIcon;
 
-	[SerializeField] private Boss boss;
+	[SerializeField] private Shrek shrek;
 
 	[SerializeField] private Transform bossSpawnPos;
 
@@ -111,7 +111,7 @@ public class GameManager : Singleton<GameManager>
 
 		if (roundNumber == firstBossRound || (roundNumber > firstBossRound && Random.Range(0, 1) < oddsOfBossRound))
 		{
-			Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
+			Instantiate(shrek, bossSpawnPos.position, Quaternion.identity);
 			oddsOfBossRound += oddsOfBossRoundDelta;
 			EnemiesAlive = ++enemiesThisRound;
 			bossRoundIcon.SetActive(true);
