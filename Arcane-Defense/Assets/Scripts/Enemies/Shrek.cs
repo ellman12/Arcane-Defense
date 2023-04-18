@@ -16,6 +16,7 @@ namespace Enemies
 		[SerializeField] private Audio.Audio appear;
 		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private float redColorDelta;
+		[SerializeField] private bool overrideRed;
 		
 		private Transform player, house;
 		private bool attackingHouse;
@@ -24,7 +25,7 @@ namespace Enemies
 		
 		private void Start()
 		{
-			spriteRenderer.color = color;
+			if (!overrideRed) spriteRenderer.color = color;
 			player = PlayerMovement.I.transform;
 			house = PlayerHouse.I.transform;
 			

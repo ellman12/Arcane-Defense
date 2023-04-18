@@ -20,8 +20,14 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField, Tooltip("The odds [0-1] of the next round being a boss round.")]
 	private float oddsOfBossRound;
 
-	[SerializeField, Tooltip("How much the odds of a round being a boss round should increase after a round.")]
+	[SerializeField, Tooltip("How much the odds of a round being a boss round should increase after a boss round.")]
 	private float oddsOfBossRoundDelta; //TODO: this needs to cap at 1 and eventually every round is a boss round. Probs use the clamp method.
+	
+	[SerializeField, Tooltip("The odds of a boss round having a Shadow Shrek.")]
+	private float oddsOfShadow;
+	
+	[SerializeField, Tooltip("How much the odds of a round being a Shadow Shrek round should increase after a boss round.")]
+	private float oddsOfShadowDelta;
 
 	[SerializeField, Tooltip("How many seconds to wait until starting the next round.")]
 	private float secondsUntilNextRound;
@@ -43,7 +49,7 @@ public class GameManager : Singleton<GameManager>
 
 	[SerializeField] private Image bossRoundIcon;
 
-	[SerializeField] private Shrek shrek;
+	[SerializeField] private Shrek shrek, shadowShrek;
 
 	[SerializeField] private Transform bossSpawnPos;
 
@@ -110,13 +116,23 @@ public class GameManager : Singleton<GameManager>
 
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound;
 
-		if (roundNumber == firstBossRound || (roundNumber > firstBossRound && Random.Range(0, 1) < oddsOfBossRound))
+		if (roundNumber == firstBossRound || (roundNumber > firstBossRound && Random.Range(0f, 1f) < oddsOfBossRound))
 		{
-			Instantiate(shrek, bossSpawnPos.position, Quaternion.identity);
-			oddsOfBossRound += oddsOfBossRoundDelta;
+			if (Random.Range(0f, 1f) < oddsOfShadow)
+			{
+				Instantiate(shadowShrek, bossSpawnPos.position, Quaternion.identity);
+				bossRoundIcon.color = Color.black;
+				oddsOfShadow += oddsOfShadowDelta;
+			}
+			else
+			{
+				Instantiate(shrek, bossSpawnPos.position, Quaternion.identity);
+				bossRoundIcon.color = Shrek.color;
+				oddsOfBossRound += oddsOfBossRoundDelta;
+			}
+			
 			EnemiesAlive = ++enemiesThisRound;
 			bossRoundIcon.enabled = true;
-			bossRoundIcon.color = Shrek.color;
 		}
 		else
 			bossRoundIcon.enabled = false;

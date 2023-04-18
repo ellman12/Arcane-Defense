@@ -10454,7 +10454,7 @@ PrefabInstance:
     - target: {fileID: 6554219594474894408, guid: a49b04aa51cfd7e479c718553a20c914, type: 3}
       propertyPath: spellInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 778d33c4a13a0df41b34a791e6436576, type: 2}
+      objectReference: {fileID: 11400000, guid: 718a5610af56354489d2737a941ad3d3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69919,9 +69919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912d312393da43618a194475a0d560ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstBossRound: 2
+  firstBossRound: 6
   oddsOfBossRound: 0.05
   oddsOfBossRoundDelta: 0.05
+  oddsOfShadow: 0.1
+  oddsOfShadowDelta: 0.05
   secondsUntilNextRound: 6
   startingEnemiesAmount: 3
   minAdditionalEnemies: 1
@@ -69935,6 +69937,7 @@ MonoBehaviour:
   secondsRemainingText: {fileID: 218870053}
   bossRoundIcon: {fileID: 734477756}
   shrek: {fileID: 5736950426583918929, guid: aab98ac93eeefdd47a496c914fc2c805, type: 3}
+  shadowShrek: {fileID: 5736950426583918929, guid: f1413a9784e2eef4e91304fe6571014c, type: 3}
   bossSpawnPos: {fileID: 1088327670}
   roundNumber: 1
   enemiesThisRound: 0
