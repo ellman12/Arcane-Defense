@@ -15,7 +15,7 @@ namespace Enemies
 		[SerializeField] private List<Spell> spells;
 		[SerializeField] private Audio.Audio appear;
 		[SerializeField] private SpriteRenderer spriteRenderer;
-		[SerializeField] private float redColorDelta;
+		[SerializeField] private float redColorDelta, posStatDelta, negStatDelta, statMultiplier;
 		[SerializeField] private bool overrideRed;
 		
 		private Transform player, house;
@@ -28,10 +28,20 @@ namespace Enemies
 			if (!overrideRed) spriteRenderer.color = color;
 			player = PlayerMovement.I.transform;
 			house = PlayerHouse.I.transform;
+
+			Health += posStatDelta * statMultiplier;
+			moveSpeed += posStatDelta * statMultiplier;
+			NegativeStatDelta(ref attackCooldown);
 			
 			AudioManager.I.PlayAudio(appear);
 			
 			StartCoroutine(Attack());
+		}
+
+		private void NegativeStatDelta(ref float stat)
+		{
+			float result = stat - negStatDelta;
+			if (result >= 0) stat = result;
 		}
 
 		private void Update()
@@ -67,6 +77,7 @@ namespace Enemies
 				}
 				yield return null;
 			}
+			//ReSharper disable once IteratorNeverReturns
 		}
 		
 		private void OnDestroy()

@@ -27,7 +27,7 @@ namespace Enemies
 		}
 
 		[SerializeField] private float health;
-		private float Health
+		protected float Health
 		{
 			get => health;
 			set
