@@ -5,6 +5,8 @@ namespace InputSystem
 {
 	public class Cursor : Singleton<Cursor>
 	{
+		[SerializeField] private float cursorDistance;
+		
 		[HideInInspector] public Vector3 rightStickInput;
 
 		private void Start()
@@ -19,6 +21,6 @@ namespace InputSystem
 				Destroy(gameObject);
 		}
 		
-		private void Update() => transform.position = PlayerMovement.I.transform.position + rightStickInput;
+		private void Update() => transform.position = PlayerMovement.I.transform.position + rightStickInput * cursorDistance;
 	}
 }
