@@ -69921,14 +69921,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstBossRound: 6
-  oddsOfBossRound: 0.05
+  oddsOfBossRound: 0.08
   oddsOfBossRoundDelta: 0.05
-  oddsOfShadow: 0.1
-  oddsOfShadowDelta: 0.05
+  oddsOfShadow: 0.2
+  oddsOfShadowDelta: 0.08
   secondsUntilNextRound: 6
   startingEnemiesAmount: 3
   minAdditionalEnemies: 1
-  maxAdditionalEnemies: 2
+  maxAdditionalEnemies: 3
   enemySpawners:
   - {fileID: 1220953147}
   - {fileID: 2010347613}
@@ -70610,6 +70610,7 @@ MonoBehaviour:
   mageEnemyKills: 0
   houseEnemyKills: 0
   shrekKills: 0
+  shadowShrekKills: 0
   text: {fileID: 1949816522}
 --- !u!1 &1951026833
 GameObject:
