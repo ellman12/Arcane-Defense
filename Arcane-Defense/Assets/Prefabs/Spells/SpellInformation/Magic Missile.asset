@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magic Missile
   m_EditorClassIdentifier: 
   spellIcon: {fileID: 21300000, guid: 9304d925a3c6172458365502b6268bfc, type: 3}
-  cooldown: 0
-  mana: 2
+  cooldown: 0.5
+  mana: 20
   info: Finds the closest target and hunts them down.
   spell: {fileID: 1144915528794004344, guid: 16b23c66630dae440967102b2d01e8b5, type: 3}

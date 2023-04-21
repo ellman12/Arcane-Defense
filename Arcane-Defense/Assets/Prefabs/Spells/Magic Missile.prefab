@@ -164,7 +164,7 @@ MonoBehaviour:
   enemySpell: 0
   start: {fileID: 0}
   target: {fileID: 0}
-  contactDamage: 20
+  contactDamage: 10
   knockbackForce: 4
   knockbackDuration: 0.2
   spellUse: {fileID: 11400000, guid: a2e19dd075d2d084e8bfb5e2cc2331f3, type: 2}
