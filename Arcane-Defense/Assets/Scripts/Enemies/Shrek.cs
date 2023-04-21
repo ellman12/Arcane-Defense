@@ -16,7 +16,7 @@ namespace Enemies
 		[SerializeField] private Audio.Audio appear;
 		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private float redColorDelta, posStatDelta, negStatDelta, statMultiplier;
-		[SerializeField] private bool overrideRed;
+		[SerializeField] private bool shadowShrek;
 		
 		private Transform player, house;
 		private bool attackingHouse;
@@ -25,7 +25,7 @@ namespace Enemies
 		
 		private void Start()
 		{
-			if (!overrideRed) spriteRenderer.color = color;
+			if (!shadowShrek) spriteRenderer.color = color;
 			player = PlayerMovement.I.transform;
 			house = PlayerHouse.I.transform;
 
@@ -82,7 +82,11 @@ namespace Enemies
 		
 		private void OnDestroy()
 		{
-			Stats.I.shrekKills++;
+			if (shadowShrek)
+				Stats.I.shadowShrekKills++;
+			else
+				Stats.I.shrekKills++;
+
 			Stats.I.UpdateStats();
 			color.g -= redColorDelta;
 			color.b -= redColorDelta;

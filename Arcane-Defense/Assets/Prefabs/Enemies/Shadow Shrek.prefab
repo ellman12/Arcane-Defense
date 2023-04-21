@@ -193,4 +193,7 @@ MonoBehaviour:
   appear: {fileID: 11400000, guid: 8470d261aa5ad1c4db08ef8344f3a260, type: 2}
   spriteRenderer: {fileID: 2932428630329453405}
   redColorDelta: 0
-  overrideRed: 1
+  posStatDelta: 0
+  negStatDelta: 0
+  statMultiplier: 0
+  shadowShrek: 1
