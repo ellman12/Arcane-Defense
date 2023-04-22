@@ -79,6 +79,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
+		Shrek.color = Color.white;
 	}
 	
 	private IEnumerator AdvanceRound()
