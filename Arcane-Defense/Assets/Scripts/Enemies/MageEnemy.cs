@@ -23,7 +23,7 @@ namespace Enemies
 
 		private void Update()
 		{
-			if (!canMove) return;
+			if (!canMove || player == null) return;
 			
 			Vector2 direction = player.position - transform.position;
 

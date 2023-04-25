@@ -22,6 +22,8 @@ namespace Player
 
 		private void LateUpdate()
 		{
+			if (target == null) return;
+			
 			Vector3 targetPosition = new Vector3(
 				Mathf.Clamp(target.position.x, minBounds.x, maxBounds.x),
 				Mathf.Clamp(target.position.y, minBounds.y, maxBounds.y),

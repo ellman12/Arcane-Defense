@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Enemies;
+using InputSystem;
 using UnityEngine;
 using Utilities;
 
@@ -11,7 +12,8 @@ namespace Player
 		[SerializeField] private StatBar healthBar;
 		[SerializeField] private new Rigidbody2D rigidbody;
 		[SerializeField] private float knockbackResistance, knockbackDuration;
-		
+		[SerializeField] private GameObject gameOverScreen;
+
 		[SerializeField, ReadOnly] private int health, maxHealth;
 		[SerializeField, ReadOnly] private bool invincible;
 
@@ -26,7 +28,12 @@ namespace Player
 				
 				healthBar.SetValue(health);
 				if (health <= 0)
+				{
 					Destroy(gameObject);
+					gameOverScreen.SetActive(true);
+					Time.timeScale = 0;
+					InputManager.I.PlayerInput.Disable();
+				}
 			}
 		}
 

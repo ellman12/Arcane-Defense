@@ -70446,6 +70446,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 765439511}
+    - target: {fileID: 3848199136964207680, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1356675767}
     - target: {fileID: 4139849220129260930, guid: c9d4b2d03f802974a9d9797936da3fc9, type: 3}
       propertyPath: m_Name
       value: Player
