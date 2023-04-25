@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enemies;
 using TMPro;
+using UI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -80,6 +81,7 @@ public class GameManager : Singleton<GameManager>
 		secondsRemainingText.text = "";
 		RemainingAmountToSpawn = EnemiesAlive = enemiesThisRound = startingEnemiesAmount;
 		Shrek.color = Color.white;
+		ScreenFade.I.FadeOut();
 	}
 	
 	private IEnumerator AdvanceRound()
