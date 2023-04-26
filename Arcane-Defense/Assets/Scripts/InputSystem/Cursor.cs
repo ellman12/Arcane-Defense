@@ -21,6 +21,10 @@ namespace InputSystem
 				Destroy(gameObject);
 		}
 		
-		private void Update() => transform.position = PlayerMovement.I.transform.position + rightStickInput * cursorDistance;
+		private void Update()
+		{
+			if (PlayerMovement.I != null)
+				transform.position = PlayerMovement.I.transform.position + rightStickInput * cursorDistance;
+		}
 	}
 }
