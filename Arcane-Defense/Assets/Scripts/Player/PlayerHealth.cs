@@ -1,7 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using Enemies;
 using InputSystem;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Utilities;
 
 namespace Player
@@ -31,6 +32,7 @@ namespace Player
 				{
 					Destroy(gameObject);
 					gameOverScreen.SetActive(true);
+					FindObjectOfType<EventSystem>().SetSelectedGameObject(GameObject.Find("Restart"));
 					Time.timeScale = 0;
 					InputManager.I.PlayerInput.Disable();
 				}
